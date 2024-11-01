@@ -1,0 +1,1312 @@
+---
+title: "Analyse de sensibilité"
+author: "Constance Bau"
+date: "4 mars 2024"
+output:
+  pdf_document: default
+    fig_width: 5
+    fig_height: 4
+    fig_caption: true
+  html_document: default
+---
+
+```{r setup4, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,cache=FALSE)
+```
+
+```{r, include = FALSE}
+
+#rm(list=ls())
+library(knitr)
+library(magrittr)
+library(dplyr)
+library(ggplot2)
+library(psych)
+library(copula)
+library(tidyverse)
+library(ranger)
+library(sobolMDA)
+library(sensitivity)
+source("./R_utiles/fct_metamodeleEtAS.R")
+
+```
+
+
+## Analyse de sensibilité
+
+```{r chargementg,echo=FALSE}
+
+# Chemin où trouver les sorties Rds
+
+cheminRData<- './Rdata/'
+
+# Nom des Rds en fonction des différentes combinaisons d'entrées pour les simulations
+
+rdsParamDep <- "paramDep5"
+rdsParamIndep <- "paramIndep"
+
+
+```
+
+
+
+
+```{r prtyg, echo=FALSE}
+# import des rds
+
+
+result_paramDep <-  readRDS(file=paste0(cheminRData, rdsParamDep))
+result_paramIndep <- readRDS(file=paste0(cheminRData, rdsParamIndep))
+
+donneesDepRD_annee1 <- result_paramDep %>% filter(year==1)
+donneesDepRD_annee2 <- result_paramDep %>% filter(year==2)
+donneesDepRD_annee3 <- result_paramDep %>% filter(year==3)
+donneesDepRD_annee4 <- result_paramDep %>% filter(year==4)
+
+donneesIndepRD_annee1 <- result_paramIndep %>% filter(year==1)
+donneesIndepRD_annee2 <- result_paramIndep %>% filter(year==2)
+donneesIndepRD_annee3 <- result_paramIndep %>% filter(year==3)
+donneesIndepRD_annee4 <- result_paramIndep %>% filter(year==4)
+
+```
+
+
+
+
+
+
+
+```{r metyh, echo=FALSE, cache=FALSE}
+
+## Construction du Random forest et calcul des indices de Sobol-MDA dans le cas de paramètres d'entrée indépendants
+
+### Construction du méta modèle
+
+#### Biomasse
+
+model_ParamIndep_biomasse_annee1 <- sobolMDA::ranger(formula=biomasse ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesIndepRD_annee1,importance = "sobolMDA")
+model_ParamIndep_biomasse_annee2 <- sobolMDA::ranger(formula=biomasse ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesIndepRD_annee2,importance = "sobolMDA")
+model_ParamIndep_biomasse_annee3 <- sobolMDA::ranger(formula=biomasse ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesIndepRD_annee3,importance = "sobolMDA")
+model_paramIndep_biomasse_annee4 <- sobolMDA::ranger(formula=biomasse ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesIndepRD_annee4,importance = "sobolMDA")
+
+```
+
+
+
+```{r mztyh, echo=FALSE, cache=FALSE}
+#### Biomasse féconde
+
+model_ParamIndep_biomasseFeconde_annee1 <- sobolMDA::ranger(formula=biomasseFeconde ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesIndepRD_annee1,importance = "sobolMDA")
+model_ParamIndep_biomasseFeconde_annee2 <- sobolMDA::ranger(formula=biomasseFeconde ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesIndepRD_annee2,importance = "sobolMDA")
+model_ParamIndep_biomasseFeconde_annee3 <- sobolMDA::ranger(formula=biomasseFeconde ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesIndepRD_annee3,importance = "sobolMDA")
+model_paramIndep_biomasseFeconde_annee4 <- sobolMDA::ranger(formula=biomasseFeconde ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesIndepRD_annee4,importance = "sobolMDA")
+
+```
+
+
+
+
+```{r mafgh, echo=FALSE, cache=FALSE}
+
+#### Poids des captures de pêche
+
+model_ParamIndep_captures_annee1 <- sobolMDA::ranger(formula=captures ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesIndepRD_annee1,importance = "sobolMDA")
+model_ParamIndep_captures_annee2 <- sobolMDA::ranger(formula=captures ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesIndepRD_annee2,importance = "sobolMDA")
+model_ParamIndep_captures_annee3 <- sobolMDA::ranger(formula=captures ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesIndepRD_annee3,importance = "sobolMDA")
+model_paramIndep_captures_annee4 <- sobolMDA::ranger(formula=captures ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesIndepRD_annee4,importance = "sobolMDA")
+
+
+```
+
+
+
+
+
+
+
+
+
+```{r maptfo, echo=FALSE}
+### Quelle est la dynamique temporelle des indices de Sobol totaux lorsque les paramètres sont indépendants ? {.tabset .tabset-fade .tabset-pills}
+
+### Biomasse
+importancesIndepBio_anne1 <- sobolMDA:: importance(model_ParamIndep_biomasse_annee1)
+importancesIndepBio_anne2 <- sobolMDA:: importance(model_ParamIndep_biomasse_annee2)
+importancesIndepBio_anne3 <- sobolMDA:: importance(model_ParamIndep_biomasse_annee3)
+importancesIndepBio_anne4 <- sobolMDA:: importance(model_paramIndep_biomasse_annee4)
+
+
+
+annee1 <- importancesIndepBio_anne1 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 1)
+
+annee2 <- importancesIndepBio_anne2 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 2)
+
+annee3 <- importancesIndepBio_anne3 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 3)
+
+annee4 <- importancesIndepBio_anne4 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 4)
+
+isa_bio_indep <- bind_rows(annee1, annee2) %>% bind_rows(annee3) %>% bind_rows(annee4)
+rm(annee1,annee2,annee3,annee4)
+
+#ggplot(isa_bio_indep, aes(x=annee, y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line()
+
+
+
+
+
+
+
+
+
+```
+
+
+
+
+```{r mapefo, echo=FALSE}
+### Biomasse féconde
+importancesIndepBioFe_anne1 <- sobolMDA:: importance(model_ParamIndep_biomasseFeconde_annee1)
+importancesIndepBioFe_anne2 <- sobolMDA:: importance(model_ParamIndep_biomasseFeconde_annee2)
+importancesIndepBioFe_anne3 <- sobolMDA:: importance(model_ParamIndep_biomasseFeconde_annee3)
+importancesIndepBioFe_anne4 <- sobolMDA:: importance(model_paramIndep_biomasseFeconde_annee4)
+
+
+
+annee1 <- importancesIndepBioFe_anne1 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 1)
+
+annee2 <- importancesIndepBioFe_anne2 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 2)
+
+annee3 <- importancesIndepBioFe_anne3 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 3)
+
+annee4 <- importancesIndepBioFe_anne4 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 4)
+
+isa_bioFe_indep <- bind_rows(annee1, annee2) %>% bind_rows(annee3) %>% bind_rows(annee4)
+rm(annee1,annee2,annee3,annee4)
+
+#ggplot(isa_bioFe_indep, aes(x=annee, y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line()
+
+```
+
+
+
+```{r mapdfo, echo=FALSE}
+### Poids des captures de pêche
+importancesIndepCap_anne1 <- sobolMDA:: importance(model_ParamIndep_captures_annee1)
+importancesIndepCap_anne2 <- sobolMDA:: importance(model_ParamIndep_captures_annee2)
+importancesIndepCap_anne3 <- sobolMDA:: importance(model_ParamIndep_captures_annee3)
+importancesIndepCap_anne4 <- sobolMDA:: importance(model_paramIndep_captures_annee4)
+
+
+
+annee1 <- importancesIndepCap_anne1 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 1)
+
+annee2 <- importancesIndepCap_anne2 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 2)
+
+annee3 <- importancesIndepCap_anne3 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 3)
+
+annee4 <- importancesIndepCap_anne4 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 4)
+
+isa_cap_indep <- bind_rows(annee1, annee2) %>% bind_rows(annee3) %>% bind_rows(annee4)
+rm(annee1,annee2,annee3,annee4)
+
+#ggplot(isa_cap_indep, aes(x=annee, y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line()
+
+```
+
+
+
+
+```{r mefo, echo=FALSE, cache=FALSE}
+
+## Construction du Random forest et calcul des indices de Sobol-MDA dans le cas de paramètres d'entrée dépendants
+
+### Construction du méta modèle (cas dépendant) {.tabset .tabset-fade .tabset-pills}
+
+#### Biomasse
+
+model_ParamDep_biomasse_annee1 <- sobolMDA::ranger(formula=biomasse ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesDepRD_annee1,importance = "sobolMDA")
+model_ParamDep_biomasse_annee2 <- sobolMDA::ranger(formula=biomasse ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesDepRD_annee2,importance = "sobolMDA")
+model_ParamDep_biomasse_annee3 <- sobolMDA::ranger(formula=biomasse ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesDepRD_annee3,importance = "sobolMDA")
+model_paramDep_biomasse_annee4 <- sobolMDA::ranger(formula=biomasse ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesDepRD_annee4,importance = "sobolMDA")
+
+```
+
+
+
+```{r mzfo, echo=FALSE, cache=FALSE}
+
+#### Biomasse féconde
+
+model_ParamDep_biomasseFeconde_annee1 <- sobolMDA::ranger(formula=biomasseFeconde ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesDepRD_annee1,importance = "sobolMDA")
+
+model_ParamDep_biomasseFeconde_annee2 <- sobolMDA::ranger(formula=biomasseFeconde ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesDepRD_annee2,importance = "sobolMDA")
+
+model_ParamDep_biomasseFeconde_annee3 <- sobolMDA::ranger(formula=biomasseFeconde ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesDepRD_annee3,importance = "sobolMDA")
+
+model_paramDep_biomasseFeconde_annee4 <- sobolMDA::ranger(formula=biomasseFeconde ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data=donneesDepRD_annee4,importance = "sobolMDA")
+
+```
+
+
+
+
+```{r maof, echo=FALSE, cache=FALSE}
+#### Poids des captures de pêche
+
+model_ParamDep_captures_annee1 <- sobolMDA::ranger(formula=captures ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesDepRD_annee1,importance = "sobolMDA")
+model_ParamDep_captures_annee2 <- sobolMDA::ranger(formula=captures ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesDepRD_annee2,importance = "sobolMDA")
+model_ParamDep_captures_annee3 <- sobolMDA::ranger(formula=captures ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesDepRD_annee3,importance = "sobolMDA")
+model_paramDep_captures_annee4 <- sobolMDA::ranger(formula=captures ~ Survie + Derive + Standardisation + Mortalite + Fecondite , data
+                                             =donneesDepRD_annee4,importance = "sobolMDA")
+
+```
+
+
+
+
+### Quelle est la dynamique temporelle des indices de Sobol-MDA lorsque les paramètres sont dépendants ? {.tabset .tabset-fade .tabset-pills}
+
+
+#### Biomasse
+
+On remarque que pour l'année 1 la standardisation est le paramètre qui influe le plus sur la biomasse. Viennent ensuite mais loin derrière la survie, la fécondité et la mortalité. La dérive n'a que très peu d'importance sur la sortie. Cette ordre va ensuite changé la deuxième année car la fécondité va devenir plus importante dans le processus de prédiction tandis que la survie va devenir moins influente. On remarque que la fécondité devient de plus en plus influente au cours du temps, jusqu'à devenir 2ème dans le classement des paramètres par ordre d'influence juste derrière la standardisation. Sa faible influence dans les premières années s'explique par le fait que le poids des nouveaux nés ne fait pas beaucoup variés le poids de la biomasse totale en sortie. Ensuite, comme les nouveaux-nés grandissent la fécondité devient plus infleuente.
+
+```{r maptao, echo=FALSE, fig.width=5, fig.height=4}
+
+
+
+importancesDepBio_anne1 <- sobolMDA:: importance(model_ParamDep_biomasse_annee1)
+importancesDepBio_anne2 <- sobolMDA:: importance(model_ParamDep_biomasse_annee2)
+importancesDepBio_anne3 <- sobolMDA:: importance(model_ParamDep_biomasse_annee3)
+importancesDepBio_anne4 <- sobolMDA:: importance(model_paramDep_biomasse_annee4)
+ 
+
+
+annee1 <- importancesDepBio_anne1 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 1)
+ 
+annee2 <- importancesDepBio_anne2 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 2)
+
+annee3 <- importancesDepBio_anne3 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 3)
+
+annee4 <- importancesDepBio_anne4 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 4)
+
+isa_bio_dep <- bind_rows(annee1, annee2) %>% bind_rows(annee3) %>% bind_rows(annee4)
+rm(annee1,annee2,annee3,annee4)
+
+ggplot(isa_bio_dep, aes(x=annee, y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line()+ labs(title = "Dynamique temporelle de l'influence des paramètres d'entrée sur la biomasse",
+       x = "année",
+       y = "indices de Sobol totaux")+theme(plot.title = element_text(size = 12))
+
+
+
+
+```
+
+
+
+#### Biomasse féconde
+
+
+Pour cette sortie, la première année, seulement la standardisation et la mortalité ont une influence notable. Ensuite l'influence de la fécondité augmente lentement. En effet, il faut du temps pour que les variations de la fécondité se reflète sur la biomasse féconde car il faut le temps que les nouveaux nés deviennent des géniteurs pour être pris en compte dans cette sortie. 
+
+```{r mapeao, echo=FALSE}
+
+importancesDepBioFe_anne1 <- sobolMDA:: importance(model_ParamDep_biomasseFeconde_annee1)
+importancesDepBioFe_anne2 <- sobolMDA:: importance(model_ParamDep_biomasseFeconde_annee2)
+importancesDepBioFe_anne3 <- sobolMDA:: importance(model_ParamDep_biomasseFeconde_annee3)
+importancesDepBioFe_anne4 <- sobolMDA:: importance(model_paramDep_biomasseFeconde_annee4)
+
+
+
+annee1 <- importancesDepBioFe_anne1 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 1)
+ 
+annee2 <- importancesDepBioFe_anne2 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 2)
+
+annee3 <- importancesDepBioFe_anne3 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 3)
+
+annee4 <- importancesDepBioFe_anne4 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 4)
+
+isa_bioFe_dep <- bind_rows(annee1, annee2) %>% bind_rows(annee3) %>% bind_rows(annee4)
+rm(annee1,annee2,annee3,annee4)
+
+ggplot(isa_bioFe_dep, aes(x=annee, y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line()
+
+
+```
+
+#### Poids des captures de pêche
+
+La première année, on remarque un classement tout à fait différent pour cette sortie. La survie est très influente et derrière elle on trouve la mortalité et la fécondité. Ensuite, comme dans le cas des autres sorties mais avec d'autres proportions, l'influence de la fécondité et de la mortalité augmente au cours du temps tandis que celle de la survie diminue fortement.
+
+
+```{r aoao, echo=FALSE}
+
+importancesCap_anne1 <- sobolMDA:: importance(model_ParamDep_captures_annee1)
+importancesCap_anne2 <- sobolMDA:: importance(model_ParamDep_captures_annee2)
+importancesCap_anne3 <- sobolMDA:: importance(model_ParamDep_captures_annee3)
+importancesCap_anne4 <- sobolMDA:: importance(model_paramDep_captures_annee4)
+
+
+
+annee1 <- importancesCap_anne1 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 1)
+ 
+annee2 <- importancesCap_anne2 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 2)
+
+annee3 <- importancesCap_anne3 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 3)
+
+annee4 <- importancesCap_anne4 %>%
+  tibble::enframe() %>%
+  mutate(Parametre = name) %>%
+  select(-name) %>%
+  rename(Indice = value) %>%
+  mutate(annee = 4)
+
+isa_cap_dep <- bind_rows(annee1, annee2) %>% bind_rows(annee3) %>% bind_rows(annee4)
+rm(annee1,annee2,annee3,annee4)
+
+ggplot(isa_cap_dep, aes(x=annee, y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line()
+
+
+```
+
+
+### A quel point nous serions nous trompés dans le calcul des indices si nous n'avions pas mis de dépendance entre les paramètres d'entrée ? Et si nous avions utilisé une méthode d'estimation ne prenant pas en compte la dépendance ?   
+
+Tout d'abord, précisons que, sur les graphiques qui suivent la légende "estimationIndice" indique pour quel jeu de données et de quelle manière les indices ont été calculé. On précise aussi que le calcul des indices de Sobol-MDA requiert la construction d'un random forest tandis que le calcul des indices de Sobol totaux se fait directement sur nos données. Ainsi :
+
+- S-MDA dep signifie que nous avons calculé les indices de Sobol-MDA pour des paramètres avec une hypothèse de dépendance (corrélation de -0.3 entre survie et dérive et corrélation de -0.5 entre survie et mortalité)
+
+- S-MDA indep signifie que nous avons calulé les indices de Sobol-MDA pour des paramètres avec une hypothèse d'indépendance.
+
+- ST dep signifie que nous avons calculé les indices de Sobol totaux pour des paramètres avec une hypothèse de dépendance.
+
+- ST dep signifie que nous avons calculé les indices de Sobol totaux pour des paramètres avec une hypothèse d'indépendance.
+
+#### biomasse {.tabset .tabset-fade .tabset-pills}
+
+Globalement, on remarque que l'hypothèse de dépendance que nous avons mise ne fait pas varier significativement la valeur des indices, de même que la méthode de calul utiliser.
+Néanmoins, on remarque que les indices qui varient le plus en fonction de l'hypothèse et des méthodes sont ceux des paramètres sur lesquels on a mis une corrélation. 
+En somme, l'utilisation d'un méthode classique de calcul des indices de Sobol totaux et/ou une hypothèse d'indépendance sur les paramètres n'aurait pas changé les conclusions de notre analyse de sensibilité dans ce cas précis.
+
+
+##### annee 1
+
+Pour la mortalité et la survie, on voit des différences notables entre S-MDA dep et ST Indep. Néanmoins, malgré cette différence, l'indice de la survie reste plus grand que celui de la mortalité dans les deux cas.
+
+```{r pfrtygs, echo=FALSE, message=FALSE}
+
+## calcul indice de Sobol total cas indépendant
+
+indIndepBio <- creerTableauIndiceSTIndep(donneesIndepRD_annee1,biomasse,1)
+
+## calcul indice de Sobol total cas dépendant
+
+indDepBio <- creerTableauIndiceSTDep(donneesDepRD_annee1,biomasse,1)
+  
+## tableau Sobol-MDA indep
+
+isa_bio_indep2 <- isa_bio_indep %>% mutate(estimationIndice = " S-MDA indep")%>% filter(annee == 1)
+
+## tableau Sobol-MDA dep
+
+isa_bio_dep2 <- isa_bio_dep %>% mutate(estimationIndice = " S-MDA dep") %>% filter(annee == 1)
+
+
+indices4Bio_annee1 <- bind_rows(indIndepBio, indDepBio) %>% bind_rows(isa_bio_dep2) %>% bind_rows(isa_bio_indep2)
+
+#rm(indIndepBio,indDepBio,isa_bio_dep2,isa_bio_indep2)
+
+ggplot(indices4Bio_annee1, aes(x = Parametre, y = Indice)) +
+  geom_col(aes(color = estimationIndice, fill = estimationIndice),position = position_dodge(0.8), width = 0.7) 
+
+
+```
+ 
+
+##### annee 2
+
+On note quelques différences notables entre les valeurs mais celles-ci ne modifient pas le classement des paramètres par ordre d'influence.
+
+```{r prtygsrd, echo=FALSE, message=FALSE}
+
+## calcul indice de Sobol total cas indépendant
+
+indIndepBio <- creerTableauIndiceSTIndep(donneesIndepRD_annee2,biomasse,2)
+
+## calcul indice de Sobol total cas dépendant
+
+indDepBio <- creerTableauIndiceSTDep(donneesDepRD_annee2,biomasse,2)
+
+## tableau Sobol-MDA indep
+
+isa_bio_indep2 <- isa_bio_indep %>% mutate(estimationIndice = " S-MDA indep")%>% filter(annee == 2)
+
+## tableau Sobol-MDA dep
+
+isa_bio_dep2 <- isa_bio_dep %>% mutate(estimationIndice = " S-MDA dep") %>% filter(annee == 2)
+
+indices4Bio_annee2 <- bind_rows(indIndepBio, indDepBio) %>% bind_rows(isa_bio_dep2) %>% bind_rows(isa_bio_indep2)
+
+rm(indIndepBio,indDepBio,isa_bio_dep2,isa_bio_indep2)
+
+ggplot(indices4Bio_annee2, aes(x = Parametre, y = Indice)) +
+  geom_col(aes(color = estimationIndice, fill = estimationIndice),position = position_dodge(0.8), width = 0.7) 
+
+```
+
+
+
+##### année 3
+
+Pour les paramètres non-corrélés, les indices sont très rapprochés, ils sont plus éloignés pour les paramètres corrélés.
+
+```{r prtygessf, echo=FALSE, message=FALSE}
+
+## calcul indice de Sobol total cas indépendant
+
+indIndepBio <- creerTableauIndiceSTIndep(donneesIndepRD_annee3,biomasse,3)
+
+## calcul indice de Sobol total cas dépendant
+
+indDepBio <- creerTableauIndiceSTDep(donneesDepRD_annee3,biomasse,3)
+
+## tableau Sobol-MDA indep
+
+isa_bio_indep2 <- isa_bio_indep %>% mutate(estimationIndice = " S-MDA indep")%>% filter(annee == 3)
+
+## tableau Sobol-MDA dep
+
+isa_bio_dep2 <- isa_bio_dep %>% mutate(estimationIndice = " S-MDA dep") %>% filter(annee == 3)
+
+indices4Bio_annee3 <- bind_rows(indIndepBio, indDepBio) %>% bind_rows(isa_bio_dep2) %>% bind_rows(isa_bio_indep2)
+
+rm(indIndepBio,indDepBio,isa_bio_dep2,isa_bio_indep2)
+
+ggplot(indices4Bio_annee3, aes(x = Parametre, y = Indice)) +
+  geom_col(aes(color = estimationIndice, fill = estimationIndice),position = position_dodge(0.8), width = 0.7) + labs(title = "Comparaison des différentes méthodes d'estimation en fonction de l'hypothèse sur les paramètres",
+       x = "paramètres",
+       y = "indices de Sobol totaux")+theme(plot.title = element_text(size = 10))
+
+
+```
+
+
+##### année 4
+
+Pour les paramètres non-corrélés, les indices sont très rapprochés, ils sont plus éloignés pour les paramètres corrélés.
+
+```{r vhe, echo=FALSE, message=FALSE}
+
+
+## calcul indice de Sobol total cas indépendant
+
+indIndepBio <- creerTableauIndiceSTIndep(donneesIndepRD_annee4,biomasse,4)
+
+## calcul indice de Sobol total cas dépendant
+
+indDepBio <- creerTableauIndiceSTDep(donneesDepRD_annee4,biomasse,4)
+
+## tableau Sobol-MDA indep
+
+isa_bio_indep2 <- isa_bio_indep %>% mutate(estimationIndice = " S-MDA indep")%>% filter(annee == 4)
+
+## tableau Sobol-MDA dep
+
+isa_bio_dep2 <- isa_bio_dep %>% mutate(estimationIndice = " S-MDA dep") %>% filter(annee == 4)
+
+indices4Bio_annee4 <- bind_rows(indIndepBio, indDepBio) %>% bind_rows(isa_bio_dep2) %>% bind_rows(isa_bio_indep2)
+
+rm(indIndepBio,indDepBio,isa_bio_dep2,isa_bio_indep2)
+
+ggplot(indices4Bio_annee4, aes(x = Parametre, y = Indice)) +
+  geom_col(aes(color = estimationIndice, fill = estimationIndice),position = position_dodge(0.8), width = 0.7) 
+
+```
+
+
+
+#### biomasse féconde {.tabset .tabset-fade .tabset-pills}
+
+Globalement, on remarque que l'hypothèse de dépendance que nous avons mise ne fait pas varier significativement la valeur des indices, de même que la méthode de calul utiliser.
+Néanmoins, on remarque que les indices qui varient le plus en fonction de l'hypothèse et des méthodes sont ceux des paramètres sur lesquels on a mis une corrélation. 
+En somme, l'utilisation d'un méthode classique de calcul des indices de Sobol totaux et/ou une hypothèse d'indépendance sur les paramètres n'aurait pas changé les conclusions de notre analyse de sensibilité dans ce cas précis.
+
+##### annee 1
+
+
+On note peu de différences entre les indices, le choix de la méthode et de l'hypothèse de dépendance ou indépendance n'aurait pas changé les conclusions de notre analyse de sensibilité.
+
+```{r prteygs, echo=FALSE, message=FALSE}
+
+## calcul indice de Sobol total cas indépendant
+
+indIndepBioFe <- creerTableauIndiceSTIndep(donneesIndepRD_annee1,biomasseFeconde,1)
+
+## calcul indice de Sobol total cas dépendant
+
+indDepBioFe <- creerTableauIndiceSTDep(donneesDepRD_annee1,biomasseFeconde,1)
+  
+## tableau Sobol-MDA indep
+
+isa_bioFe_indep2 <- isa_bioFe_indep %>% mutate(estimationIndice = " S-MDA indep")%>% filter(annee == 1)
+
+## tableau Sobol-MDA dep
+
+isa_bioFe_dep2 <- isa_bioFe_dep %>% mutate(estimationIndice = " S-MDA dep") %>% filter(annee == 1)
+
+
+indices4BioFe_annee1 <- bind_rows(indIndepBioFe, indDepBioFe) %>% bind_rows(isa_bioFe_dep2) %>% bind_rows(isa_bioFe_indep2)
+
+rm(indIndepBioFe,indDepBioFe,isa_bioFe_dep2,isa_bioFe_indep2)
+
+ggplot(indices4BioFe_annee1, aes(x = Parametre, y = Indice)) +
+  geom_col(aes(color = estimationIndice, fill = estimationIndice),position = position_dodge(0.8), width = 0.7) 
+
+
+```
+
+
+
+
+
+##### annee 2
+
+On note peu de différences entre les indices, le choix de la méthode et de l'hypothèse de dépendance ou indépendance n'aurait pas changé les conclusions de notre analyse de sensibilité.
+
+```{r pertygsd, echo=FALSE, message=FALSE}
+
+## calcul indice de Sobol total cas indépendant
+
+indIndepBioFe <- creerTableauIndiceSTIndep(donneesIndepRD_annee2,biomasseFeconde,2)
+
+## calcul indice de Sobol total cas dépendant
+
+indDepBioFe <- creerTableauIndiceSTDep(donneesDepRD_annee2,biomasseFeconde,2)
+
+## tableau Sobol-MDA indep
+
+isa_bioFe_indep2 <- isa_bioFe_indep %>% mutate(estimationIndice = " S-MDA indep")%>% filter(annee == 2)
+
+## tableau Sobol-MDA dep
+
+isa_bioFe_dep2 <- isa_bioFe_dep %>% mutate(estimationIndice = " S-MDA dep") %>% filter(annee == 2)
+
+indices4BioFe_annee2 <- bind_rows(indIndepBioFe, indDepBioFe) %>% bind_rows(isa_bioFe_dep2) %>% bind_rows(isa_bioFe_indep2)
+
+rm(indIndepBioFe,indDepBioFe,isa_bioFe_dep2,isa_bioFe_indep2)
+
+ggplot(indices4BioFe_annee2, aes(x = Parametre, y = Indice)) +
+  geom_col(aes(color = estimationIndice, fill = estimationIndice),position = position_dodge(0.8), width = 0.7) 
+
+```
+
+
+
+##### année 3
+
+On note peu de différences entre les indices, le choix de la méthode et de l'hypothèse de dépendance ou indépendance, n'aurait pas changé les conclusions de notre analyse de sensibilité.
+
+```{r eprtygssf, echo=FALSE, message=FALSE}
+
+## calcul indice de Sobol total cas indépendant
+
+indIndepBio <- creerTableauIndiceSTIndep(donneesIndepRD_annee3,biomasseFeconde,3)
+
+## calcul indice de Sobol total cas dépendant
+
+indDepBio <- creerTableauIndiceSTDep(donneesDepRD_annee3,biomasseFeconde,3)
+
+## tableau Sobol-MDA indep
+
+isa_bio_indep2 <- isa_bioFe_indep %>% mutate(estimationIndice = " S-MDA indep")%>% filter(annee == 3)
+
+## tableau Sobol-MDA dep
+
+isa_bio_dep2 <- isa_bioFe_dep %>% mutate(estimationIndice = " S-MDA dep") %>% filter(annee == 3)
+
+indices4BioFe_annee3 <- bind_rows(indIndepBio, indDepBio) %>% bind_rows(isa_bio_dep2) %>% bind_rows(isa_bio_indep2)
+
+rm(indIndepBio,indDepBio,isa_bio_dep2,isa_bio_indep2)
+
+ggplot(indices4BioFe_annee3, aes(x = Parametre, y = Indice)) +
+  geom_col(aes(color = estimationIndice, fill = estimationIndice),position = position_dodge(0.8), width = 0.7) + labs(title = "Comparaison des différentes méthodes d'estimation en fonction de l'hypothèse sur les paramètres",
+       x = "paramètres",
+       y = "indices de Sobol totaux")+theme(plot.title = element_text(size = 10))
+
+
+```
+
+
+
+##### année 4
+
+On note peu de différences entre les indices, le choix de la méthode et de l'hypothèse de dépendance ou indépendance, n'aurait pas changé les conclusions de notre analyse de sensibilité.
+
+```{r zvh, echo=FALSE, message=FALSE}
+
+
+## calcul indice de Sobol total cas indépendant
+
+indIndepBio <- creerTableauIndiceSTIndep(donneesIndepRD_annee4,biomasseFeconde,4)
+
+## calcul indice de Sobol total cas dépendant
+
+indDepBio <- creerTableauIndiceSTDep(donneesDepRD_annee4,biomasseFeconde,4)
+
+## tableau Sobol-MDA indep
+
+isa_bio_indep2 <- isa_bioFe_indep %>% mutate(estimationIndice = " S-MDA indep")%>% filter(annee == 4)
+
+## tableau Sobol-MDA dep
+
+isa_bio_dep2 <- isa_bioFe_dep %>% mutate(estimationIndice = " S-MDA dep") %>% filter(annee == 4)
+
+indices4BioFe_annee4 <- bind_rows(indIndepBio, indDepBio) %>% bind_rows(isa_bio_dep2) %>% bind_rows(isa_bio_indep2)
+
+rm(indIndepBio,indDepBio,isa_bio_dep2,isa_bio_indep2)
+
+ggplot(indices4BioFe_annee4, aes(x = Parametre, y = Indice)) +
+  geom_col(aes(color = estimationIndice, fill = estimationIndice),position = position_dodge(0.8), width = 0.7) 
+
+```
+
+
+
+
+#### captures {.tabset .tabset-fade .tabset-pills}
+
+Pour cette sortie, on note davantage de différences entre les indices que pour les deux autres. En effet, comme les paramètres corrélés survie et mortalité ont plus d'influence sur cette sortie que sur les autres, les différences entre les indices selon les méthodes et les hypothèses sont aussi plus importantes. Néanmoins, ces différences ne changent pas le classement par ordre d'influence dans la plupart des cas. On remarque que pour toutes les années, les valeurs des indices "ST dep" et "S-MDA dep" sont très proches mêmes pour les paramètres corrélés. Cela signifie que le calcul des indices de Sobol totaux qui n'est normalement pas adapté aux cas avec dépendance donne de bons résultats dans ce cas précis.
+
+
+
+##### annee 1
+
+
+On remarque que quelque soit la méthode de calcul utilisée, pour les mêmes hypothèses sur les paramètres les indices sont presque identiques. En revanche, l'hypothèse sur la dépendance (oui ou non) fait varier les valeurs des indices corrélés.
+
+```{r prtyzgs, echo=FALSE, message=FALSE}
+
+## calcul indice de Sobol total cas indépendant
+
+indIndepBio <- creerTableauIndiceSTIndep(donneesIndepRD_annee1,captures,1)
+
+## calcul indice de Sobol total cas dépendant
+
+indDepBio <- creerTableauIndiceSTDep(donneesDepRD_annee1,captures,1)
+  
+## tableau Sobol-MDA indep
+
+isa_bio_indep2 <- isa_cap_indep %>% mutate(estimationIndice = " S-MDA indep")%>% filter(annee == 1)
+
+## tableau Sobol-MDA dep
+
+isa_bio_dep2 <- isa_cap_dep %>% mutate(estimationIndice = " S-MDA dep") %>% filter(annee == 1)
+
+
+indices4Cap_annee1 <- bind_rows(indIndepBio, indDepBio) %>% bind_rows(isa_bio_dep2) %>% bind_rows(isa_bio_indep2)
+
+rm(indIndepBio,indDepBio,isa_bio_dep2,isa_bio_indep2)
+
+ggplot(indices4Cap_annee1, aes(x = Parametre, y = Indice)) +
+  geom_col(aes(color = estimationIndice, fill = estimationIndice),position = position_dodge(0.8), width = 0.7) 
+
+
+```
+
+
+##### annee 2
+
+On remarque que quelque soit la méthode de calcul utilisée, pour les mêmes hypothèses sur les paramètres les indices sont presque identiques. En revanche, l'hypothèse sur la dépendance (oui ou non) fait varier les valeurs des indices corrélés.
+
+```{r prtzygs, echo=FALSE, message=FALSE}
+
+## calcul indice de Sobol total cas indépendant
+
+indIndepBio <- creerTableauIndiceSTIndep(donneesIndepRD_annee2,captures,2)
+
+## calcul indice de Sobol total cas dépendant
+
+indDepBio <- creerTableauIndiceSTDep(donneesDepRD_annee2,captures,2)
+  
+## tableau Sobol-MDA indep
+
+isa_bio_indep2 <- isa_cap_indep %>% mutate(estimationIndice = " S-MDA indep")%>% filter(annee == 2)
+
+## tableau Sobol-MDA dep
+
+isa_bio_dep2 <- isa_cap_dep %>% mutate(estimationIndice = " S-MDA dep") %>% filter(annee == 2)
+
+
+indices4Cap_annee2 <- bind_rows(indIndepBio, indDepBio) %>% bind_rows(isa_bio_dep2) %>% bind_rows(isa_bio_indep2)
+
+rm(indIndepBio,indDepBio,isa_bio_dep2,isa_bio_indep2)
+
+ggplot(indices4Cap_annee2, aes(x = Parametre, y = Indice)) +
+  geom_col(aes(color = estimationIndice, fill = estimationIndice),position = position_dodge(0.8), width = 0.7) 
+
+
+```
+
+
+
+##### annee 3
+
+On remarque que quelque soit la méthode de calcul utilisée, pour les mêmes hypothèses sur les paramètres les indices sont presque identiques. En revanche, l'hypothèse sur la dépendance (oui ou non) fait varier les valeurs des indices corrélés.
+
+```{r pzrtygs, echo=FALSE, message=FALSE}
+
+## calcul indice de Sobol total cas indépendant
+
+indIndepBio <- creerTableauIndiceSTIndep(donneesIndepRD_annee3,captures,3)
+
+## calcul indice de Sobol total cas dépendant
+
+indDepBio <- creerTableauIndiceSTDep(donneesDepRD_annee3,captures,3)
+  
+## tableau Sobol-MDA indep
+
+isa_bio_indep2 <- isa_cap_indep %>% mutate(estimationIndice = " S-MDA indep")%>% filter(annee == 3)
+
+## tableau Sobol-MDA dep
+
+isa_bio_dep2 <- isa_cap_dep %>% mutate(estimationIndice = " S-MDA dep") %>% filter(annee == 3)
+
+
+indices4Cap_annee3 <- bind_rows(indIndepBio, indDepBio) %>% bind_rows(isa_bio_dep2) %>% bind_rows(isa_bio_indep2)
+
+rm(indIndepBio,indDepBio,isa_bio_dep2,isa_bio_indep2)
+
+ggplot(indices4Cap_annee3, aes(x = Parametre, y = Indice)) +
+  geom_col(aes(color = estimationIndice, fill = estimationIndice),position = position_dodge(0.8), width = 0.7) 
+
+
+```
+
+
+
+##### annee 4
+
+On remarque que quelque soit la méthode de calcul utilisée, pour les mêmes hypothèses sur les paramètres les indices sont presque identiques. En revanche, l'hypothèse sur la dépendance (oui ou non) fait varier les valeurs des indices corrélés.
+
+```{r zprtygs, echo=FALSE,message=FALSE}
+
+## calcul indice de Sobol total cas indépendant
+
+indIndepBio <- creerTableauIndiceSTIndep(donneesIndepRD_annee4,captures,4)
+
+## calcul indice de Sobol total cas dépendant
+
+indDepBio <- creerTableauIndiceSTDep(donneesDepRD_annee4,captures,4)
+  
+## tableau Sobol-MDA indep
+
+isa_bio_indep2 <- isa_cap_indep %>% mutate(estimationIndice = " S-MDA indep")%>% filter(annee == 4)
+
+## tableau Sobol-MDA dep
+
+isa_bio_dep2 <- isa_cap_dep %>% mutate(estimationIndice = " S-MDA dep") %>% filter(annee == 4)
+
+
+indices4Cap_annee4 <- bind_rows(indIndepBio, indDepBio) %>% bind_rows(isa_bio_dep2) %>% bind_rows(isa_bio_indep2)
+
+rm(indIndepBio,indDepBio,isa_bio_dep2,isa_bio_indep2)
+
+ggplot(indices4Cap_annee4, aes(x = Parametre, y = Indice)) +
+  geom_col(aes(color = estimationIndice, fill = estimationIndice),position = position_dodge(0.8), width = 0.7) 
+
+
+```
+
+
+
+
+### Quel est l'effet de la corrélation entre les paramètres d'entrée sur la valeur des indices de sensibilité ? {.tabset .tabset-fade .tabset-pills}
+
+On remarque que les indices de Sobol-MDA des paramètres corrélés diminue significativement lorsque la corrélation augmente. Dans certains cas, l'augmentation de la corrélation entre les paramètres modifie le classement par ordre d'influence des paramètres.
+
+
+```{r prtyzgsbm, echo=FALSE}
+
+## chargement des données
+
+rdsParamDep0406 <- "paramDep0406"
+rdsParamDep0507 <- "paramDep0507"
+rdsParamDep0608 <- "paramDep0608"
+
+```
+
+
+#### biomasse 
+
+##### année 1
+
+Les indices des paramètres non corrélés ont tendance à stagner tandis que ceux de paramètres corrélés diminuent lorsque la corrélation augmente. Le classement des paramètres change en fonction des valeurs de corrélation.
+
+```{r prztygsbte, echo=FALSE}
+indBio0406 <- obtenirTableauIndicesBio(cheminRData, "paramDep0406")
+indBio0507 <- obtenirTableauIndicesBio(cheminRData, "paramDep0507")
+indBio0608 <- obtenirTableauIndicesBio(cheminRData, "paramDep0608")
+
+cor1 <- isa_bio_indep  %>% mutate(correlation = "0 et 0") %>% filter(annee==1)
+indBio0305c <- isa_bio_dep %>% mutate(correlation = "-0.3 et -0.5") %>% filter(annee==1)
+indBio0406c <- indBio0406 %>% mutate(correlation = "-0.4 et -0.6") %>% filter(annee==1)
+indBio0507c <- indBio0507 %>% mutate(correlation = "-0.5 et -0.7") %>% filter(annee==1)
+indBio0608c <- indBio0608 %>% mutate(correlation = "-0.6 et -0.8") %>% filter(annee==1)
+
+tablIndCor <- bind_rows(cor1,indBio0305c) %>% bind_rows(indBio0406c) %>% bind_rows(indBio0507c)%>% bind_rows(indBio0608c)
+
+ggplot(tablIndCor, aes(x=factor(correlation,levels=c("0 et 0","-0.3 et -0.5","-0.4 et -0.6","-0.5 et -0.7","-0.6 et -0.8")), y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line() + labs(title = "Variations de la valeur des indices en fonction de la corrélation entre les paramètres",
+       x = "corrélation respective entre les paramètres survie-dérive et survie-mortalité ",
+       y = "indices de Sobol totaux")+theme(plot.title = element_text(size = 10))
+
+
+
+```
+
+
+
+
+##### annee 2
+
+Les indices des paramètres non corrélés ont tendance à stagner tandis que ceux de paramètres corrélés diminuent lorsque la corrélation augmente. Le classement des paramètres ne change pas en fonction des valeurs de corrélation.
+
+```{r pzrtygsbte, echo=FALSE}
+
+
+cor1 <- isa_bio_indep  %>% mutate(correlation = "0 et 0") %>% filter(annee==2)
+indBio0305c <- isa_bio_dep %>% mutate(correlation = "-0.3 et -0.5") %>% filter(annee==2)
+indBio0406c <- indBio0406 %>% mutate(correlation = "-0.4 et -0.6") %>% filter(annee==2)
+indBio0507c <- indBio0507 %>% mutate(correlation = "-0.5 et -0.7") %>% filter(annee==2)
+indBio0608c <- indBio0608 %>% mutate(correlation = "-0.6 et -0.8") %>% filter(annee==2 )
+
+tablIndCor <- bind_rows(cor1,indBio0305c) %>% bind_rows(indBio0406c) %>% bind_rows(indBio0507c)%>% bind_rows(indBio0608c)
+
+ggplot(tablIndCor, aes(x=factor(correlation,levels=c("0 et 0","-0.3 et -0.5","-0.4 et -0.6","-0.5 et -0.7","-0.6 et -0.8")), y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line() + labs(title = "Variations de la valeur des indices en fonction de la corrélation entre les paramètres",
+       x = "corrélation respective entre les paramètres survie-dérive et survie-mortalité ",
+       y = "indices de Sobol totaux")+theme(plot.title = element_text(size = 10))
+
+
+
+```
+
+
+
+##### année 3
+
+Les indices des paramètres non corrélés ont tendance à stagner tandis que ceux de paramètres corrélés diminuent lorsque la corrélation augmente. Le classement des paramètres ne change pas en fonction des valeurs de corrélation.
+
+```{r zprtygsbte, echo=FALSE}
+
+
+cor1 <- isa_bio_indep  %>% mutate(correlation = "0 et 0") %>% filter(annee==3)
+indBio0305c <- isa_bio_dep %>% mutate(correlation = "-0.3 et -0.5") %>% filter(annee==3)
+indBio0406c <- indBio0406 %>% mutate(correlation = "-0.4 et -0.6") %>% filter(annee==3)
+indBio0507c <- indBio0507 %>% mutate(correlation = "-0.5 et -0.7") %>% filter(annee==3)
+indBio0608c <- indBio0608 %>% mutate(correlation = "-0.6 et -0.8") %>% filter(annee==3 )
+
+tablIndCor <- bind_rows(cor1,indBio0305c) %>% bind_rows(indBio0406c) %>% bind_rows(indBio0507c)%>% bind_rows(indBio0608c)
+
+ggplot(tablIndCor, aes(x=factor(correlation,levels=c("0 et 0","-0.3 et -0.5","-0.4 et -0.6","-0.5 et -0.7","-0.6 et -0.8")), y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line() + labs(title = "Variations de la valeur des indices en fonction de la corrélation entre les paramètres",
+       x = "corrélation respective entre les paramètres survie-dérive et survie-mortalité ",
+       y = "indices de Sobol totaux")+theme(plot.title = element_text(size = 10))
+
+
+
+```
+
+
+##### année 4
+
+Les indices des paramètres non corrélés ont tendance à stagner tandis que ceux de paramètres corrélés diminuent lorsque la corrélation augmente. Le classement des paramètres change à partir d'une certaines corrélation.
+
+```{r prtygsbtea, echo=FALSE}
+
+
+cor1 <- isa_bio_indep  %>% mutate(correlation = "0 et 0") %>% filter(annee==4)
+indBio0305c <- isa_bio_dep %>% mutate(correlation = "-0.3 et -0.5") %>% filter(annee==4)
+indBio0406c <- indBio0406 %>% mutate(correlation = "-0.4 et -0.6") %>% filter(annee==4)
+indBio0507c <- indBio0507 %>% mutate(correlation = "-0.5 et -0.7") %>% filter(annee==4)
+indBio0608c <- indBio0608 %>% mutate(correlation = "-0.6 et -0.8") %>% filter(annee==4 )
+
+tablIndCor <- bind_rows(cor1,indBio0305c) %>% bind_rows(indBio0406c) %>% bind_rows(indBio0507c)%>% bind_rows(indBio0608c)
+
+ggplot(tablIndCor, aes(x=factor(correlation,levels=c("0 et 0","-0.3 et -0.5","-0.4 et -0.6","-0.5 et -0.7","-0.6 et -0.8")), y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line() + labs(title = "Variations de la valeur des indices en fonction de la corrélation entre les paramètres",
+       x = "corrélation respective entre les paramètres survie-dérive et survie-mortalité ",
+       y = "indices de Sobol totaux")+theme(plot.title = element_text(size = 10))
+
+
+rm(indBio0406,indBio0507,indBio0608)
+
+```
+
+
+
+#### biomasse féconde
+
+
+##### année 1
+
+On remarque que l'augmentation de la corrélation fait diminuer l'indice du paramètre mortalité qui est un paramètre corrélé.
+On remarque pas l'effet de l'augmentation de la corrélation car les indices des autres paramètres corrélés car ils sont très faibles.
+
+
+
+```{r prtygsbtae, echo=FALSE}
+
+indBio0406 <- obtenirTableauIndicesBioFe(cheminRData, "paramDep0406")
+indBio0507 <- obtenirTableauIndicesBioFe(cheminRData, "paramDep0507")
+indBio0608 <- obtenirTableauIndicesBioFe(cheminRData, "paramDep0608")
+
+
+cor1 <- isa_bioFe_indep  %>% mutate(correlation = "0 et 0") %>% filter(annee==1)
+indBio0305c <- isa_bioFe_dep %>% mutate(correlation = "-0.3 et -0.5") %>% filter(annee==1)
+indBio0406c <- indBio0406 %>% mutate(correlation = "-0.4 et -0.6") %>% filter(annee==1)
+indBio0507c <- indBio0507 %>% mutate(correlation = "-0.5 et -0.7") %>% filter(annee==1)
+indBio0608c <- indBio0608 %>% mutate(correlation = "-0.6 et -0.8") %>% filter(annee==1)
+
+tablIndCor <- bind_rows(cor1,indBio0305c) %>% bind_rows(indBio0406c) %>% bind_rows(indBio0507c)%>% bind_rows(indBio0608c)
+
+ggplot(tablIndCor, aes(x=factor(correlation,levels=c("0 et 0","-0.3 et -0.5","-0.4 et -0.6","-0.5 et -0.7","-0.6 et -0.8")), y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line() + labs(title = "Variations de la valeur des indices en fonction de la corrélation entre les paramètres",
+       x = "corrélation respective entre les paramètres survie-dérive et survie-mortalité ",
+       y = "indices de Sobol totaux")+theme(plot.title = element_text(size = 10))
+
+
+
+```
+
+##### année 2
+
+On remarque que l'augmentation de la corrélation fait diminuer l'indice du paramètre mortalité qui est un paramètre corrélé.
+On remarque pas l'effet de l'augmentation de la corrélation car les indices des autres paramètres corrélés car ils sont très faibles.
+
+```{r prtygsbate, echo=FALSE}
+
+
+
+
+cor1 <- isa_bioFe_indep  %>% mutate(correlation = "0 et 0") %>% filter(annee==2)
+indBio0305c <- isa_bioFe_dep %>% mutate(correlation = "-0.3 et -0.5") %>% filter(annee==2)
+indBio0406c <- indBio0406 %>% mutate(correlation = "-0.4 et -0.6") %>% filter(annee==2)
+indBio0507c <- indBio0507 %>% mutate(correlation = "-0.5 et -0.7") %>% filter(annee==2)
+indBio0608c <- indBio0608 %>% mutate(correlation = "-0.6 et -0.8") %>% filter(annee==2)
+
+tablIndCor <- bind_rows(cor1,indBio0305c) %>% bind_rows(indBio0406c) %>% bind_rows(indBio0507c)%>% bind_rows(indBio0608c)
+
+ggplot(tablIndCor, aes(x=factor(correlation,levels=c("0 et 0","-0.3 et -0.5","-0.4 et -0.6","-0.5 et -0.7","-0.6 et -0.8")), y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line() + labs(title = "Variations de la valeur des indices en fonction de la corrélation entre les paramètres",
+       x = "corrélation respective entre les paramètres survie-dérive et survie-mortalité ",
+       y = "indices de Sobol totaux")+theme(plot.title = element_text(size = 10))
+
+
+
+```
+
+
+##### année 3
+
+On remarque que l'augmentation de la corrélation fait diminuer l'indice du paramètre mortalité qui est un paramètre corrélé.
+On remarque pas l'effet de l'augmentation de la corrélation car les indices des autres paramètres corrélés car ils sont très faibles.
+
+
+```{r prtygsabte, echo=FALSE}
+
+
+
+
+cor1 <- isa_bioFe_indep  %>% mutate(correlation = "0 et 0") %>% filter(annee==3)
+indBio0305c <- isa_bioFe_dep %>% mutate(correlation = "-0.3 et -0.5") %>% filter(annee==3)
+indBio0406c <- indBio0406 %>% mutate(correlation = "-0.4 et -0.6") %>% filter(annee==3)
+indBio0507c <- indBio0507 %>% mutate(correlation = "-0.5 et -0.7") %>% filter(annee==3)
+indBio0608c <- indBio0608 %>% mutate(correlation = "-0.6 et -0.8") %>% filter(annee==3)
+
+tablIndCor <- bind_rows(cor1,indBio0305c) %>% bind_rows(indBio0406c) %>% bind_rows(indBio0507c)%>% bind_rows(indBio0608c)
+
+ggplot(tablIndCor, aes(x=factor(correlation,levels=c("0 et 0","-0.3 et -0.5","-0.4 et -0.6","-0.5 et -0.7","-0.6 et -0.8")), y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line() + labs(title = "Variations de la valeur des indices en fonction de la corrélation entre les paramètres",
+       x = "corrélation respective entre les paramètres survie-dérive et survie-mortalité ",
+       y = "indices de Sobol totaux")+theme(plot.title = element_text(size = 10))
+
+
+
+```
+
+
+
+##### année 4
+
+A partir d'une certaine corrélation (-0.5 et -0.7) la mortalité (paramètre corrélé) dont l'indice diminue fortement devient moins influente que la fécondité (paramètre non corrélé) dont l'indice a stagné.
+
+
+```{r prtygasbte, echo=FALSE}
+
+
+
+
+cor1 <- isa_bioFe_indep  %>% mutate(correlation = "0 et 0") %>% filter(annee==4)
+indBio0305c <- isa_bioFe_dep %>% mutate(correlation = "-0.3 et -0.5") %>% filter(annee==4)
+indBio0406c <- indBio0406 %>% mutate(correlation = "-0.4 et -0.6") %>% filter(annee==4)
+indBio0507c <- indBio0507 %>% mutate(correlation = "-0.5 et -0.7") %>% filter(annee==4)
+indBio0608c <- indBio0608 %>% mutate(correlation = "-0.6 et -0.8") %>% filter(annee==4)
+
+tablIndCor <- bind_rows(cor1,indBio0305c) %>% bind_rows(indBio0406c) %>% bind_rows(indBio0507c)%>% bind_rows(indBio0608c)
+
+ggplot(tablIndCor, aes(x=factor(correlation,levels=c("0 et 0","-0.3 et -0.5","-0.4 et -0.6","-0.5 et -0.7","-0.6 et -0.8")), y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line() + labs(title = "Variations de la valeur des indices en fonction de la corrélation entre les paramètres",
+       x = "corrélation respective entre les paramètres survie-dérive et survie-mortalité ",
+       y = "indices de Sobol totaux")+theme(plot.title = element_text(size = 10))
+
+
+rm(indBio0406,indBio0507,indBio0608)
+
+```
+ 
+
+#### captures de pêche
+
+##### année 1
+
+Les paramètres sur lesquels on a mis une corrélation sont très influents pour corrélation faible ou nulle(surtout la survie). Ainsi la dimintion de leur importance lorsque la corrélation augmente est flagrante. De 1ère au classement par ordre d'infleunce,la survie est passée avant dernière avec l'augmentation de la corrélation.
+
+
+```{r prtyagsbte, echo=FALSE}
+
+indBio0406 <- obtenirTableauIndicesCap(cheminRData, "paramDep0406")
+indBio0507 <- obtenirTableauIndicesCap(cheminRData, "paramDep0507")
+indBio0608 <- obtenirTableauIndicesCap(cheminRData, "paramDep0608")
+
+
+cor1 <- isa_cap_indep  %>% mutate(correlation = "0 et 0") %>% filter(annee==1)
+indBio0305c <- isa_cap_dep %>% mutate(correlation = "-0.3 et -0.5") %>% filter(annee==1)
+indBio0406c <- indBio0406 %>% mutate(correlation = "-0.4 et -0.6") %>% filter(annee==1)
+indBio0507c <- indBio0507 %>% mutate(correlation = "-0.5 et -0.7") %>% filter(annee==1)
+indBio0608c <- indBio0608 %>% mutate(correlation = "-0.6 et -0.8") %>% filter(annee==1)
+
+tablIndCor <- bind_rows(cor1,indBio0305c) %>% bind_rows(indBio0406c) %>% bind_rows(indBio0507c)%>% bind_rows(indBio0608c)
+
+ggplot(tablIndCor, aes(x=factor(correlation,levels=c("0 et 0","-0.3 et -0.5","-0.4 et -0.6","-0.5 et -0.7","-0.6 et -0.8")), y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line() + labs(title = "Variations de la valeur des indices en fonction de la corrélation entre les paramètres",
+       x = "corrélation respective entre les paramètres survie-dérive et survie-mortalité ",
+       y = "indices de Sobol totaux")+theme(plot.title = element_text(size = 10))
+
+
+
+```
+
+
+##### année 2
+
+Les paramètres sur lesquels on a mis une corrélation sont très influents pour corrélation faible ou nulle (surtout la survie et la mortalité). On voit leur valeur chuté lorsque la corrélation augmente, ce qui modifie le classement.
+
+
+```{r prtaygsbte, echo=FALSE}
+
+
+
+
+cor1 <- isa_cap_indep  %>% mutate(correlation = "0 et 0") %>% filter(annee==2)
+indBio0305c <- isa_cap_dep %>% mutate(correlation = "-0.3 et -0.5") %>% filter(annee==2)
+indBio0406c <- indBio0406 %>% mutate(correlation = "-0.4 et -0.6") %>% filter(annee==2)
+indBio0507c <- indBio0507 %>% mutate(correlation = "-0.5 et -0.7") %>% filter(annee==2)
+indBio0608c <- indBio0608 %>% mutate(correlation = "-0.6 et -0.8") %>% filter(annee==2)
+
+tablIndCor <- bind_rows(cor1,indBio0305c) %>% bind_rows(indBio0406c) %>% bind_rows(indBio0507c)%>% bind_rows(indBio0608c)
+
+ggplot(tablIndCor, aes(x=factor(correlation,levels=c("0 et 0","-0.3 et -0.5","-0.4 et -0.6","-0.5 et -0.7","-0.6 et -0.8")), y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line() + labs(title = "Variations de la valeur des indices en fonction de la corrélation entre les paramètres",
+       x = "corrélation respective entre les paramètres survie-dérive et survie-mortalité ",
+       y = "indices de Sobol totaux")+theme(plot.title = element_text(size = 10))
+
+
+
+```
+
+
+##### année 3
+
+Les paramètres sur lesquels on a mis une corrélation sont très influents pour corrélation faible ou nulle (surtout la survie et la mortalité). On voit leur valeur chuté lorsque la corrélation augmente, ce qui modifie le classement.
+
+```{r partygsbte, echo=FALSE}
+
+
+
+
+cor1 <- isa_cap_indep  %>% mutate(correlation = "0 et 0") %>% filter(annee==3)
+indBio0305c <- isa_cap_dep %>% mutate(correlation = "-0.3 et -0.5") %>% filter(annee==3)
+indBio0406c <- indBio0406 %>% mutate(correlation = "-0.4 et -0.6") %>% filter(annee==3)
+indBio0507c <- indBio0507 %>% mutate(correlation = "-0.5 et -0.7") %>% filter(annee==3)
+indBio0608c <- indBio0608 %>% mutate(correlation = "-0.6 et -0.8") %>% filter(annee==3)
+
+tablIndCor <- bind_rows(cor1,indBio0305c) %>% bind_rows(indBio0406c) %>% bind_rows(indBio0507c)%>% bind_rows(indBio0608c)
+
+ggplot(tablIndCor, aes(x=factor(correlation,levels=c("0 et 0","-0.3 et -0.5","-0.4 et -0.6","-0.5 et -0.7","-0.6 et -0.8")), y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line() + labs(title = "Variations de la valeur des indices en fonction de la corrélation entre les paramètres",
+       x = "corrélation respective entre les paramètres survie-dérive et survie-mortalité ",
+       y = "indices de Sobol totaux")+theme(plot.title = element_text(size = 10))
+
+
+
+```
+
+
+
+##### année 4
+
+Les 2 paramètres influents pour une corrélation nulle sont la survie et la fécondité. Seul l'influence de la mortalité va diminuer avec l'augmentation de la corrélation car c'est un paramètre corrélé.
+
+
+```{r aprtygsbte, echo=FALSE}
+
+
+
+
+cor1 <- isa_cap_indep  %>% mutate(correlation = "0 et 0") %>% filter(annee==4)
+indBio0305c <- isa_cap_dep %>% mutate(correlation = "-0.3 et -0.5") %>% filter(annee==4)
+indBio0406c <- indBio0406 %>% mutate(correlation = "-0.4 et -0.6") %>% filter(annee==4)
+indBio0507c <- indBio0507 %>% mutate(correlation = "-0.5 et -0.7") %>% filter(annee==4)
+indBio0608c <- indBio0608 %>% mutate(correlation = "-0.6 et -0.8") %>% filter(annee==4)
+
+tablIndCor <- bind_rows(cor1,indBio0305c) %>% bind_rows(indBio0406c) %>% bind_rows(indBio0507c)%>% bind_rows(indBio0608c)
+
+ggplot(tablIndCor, aes(x=factor(correlation,levels=c("0 et 0","-0.3 et -0.5","-0.4 et -0.6","-0.5 et -0.7","-0.6 et -0.8")), y=Indice,group=Parametre,color=Parametre))+geom_point()+geom_line() + labs(title = "Variations de la valeur des indices en fonction de la corrélation entre les paramètres",
+       x = "corrélation respective entre les paramètres survie-dérive et survie-mortalité ",
+       y = "indices de Sobol totaux")+theme(plot.title = element_text(size = 10))
+
+
+
+```
+
+
+
+
+

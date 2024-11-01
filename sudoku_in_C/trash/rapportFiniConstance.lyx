@@ -1,0 +1,1499 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass mwrep
+\begin_preamble
+\makeatletter
+\@addtoreset{chapter}{part}
+\@addtoreset{section}{chapter}
+%\@addtoreset{thm}{section}
+\makeatother
+\usepackage{icomma}
+\renewcommand\thesection{\Roman{section}}
+\renewcommand\thesubsection{~~~\alph{subsection}}
+%\renewcommand\thethm{\arabic{section}.\arabic{thm}}
+%\renewcommand\thedefn{\arabic{section}.\arabic{thm}}
+%\renewcommand\theprop{\arabic{section}.\arabic{thm}}
+%\renewcommand\thelem{\arabic{section}.\arabic{thm}}
+%\renewcommand\thecor{\arabic{section}.\arabic{thm}}
+\end_preamble
+\use_default_options true
+\begin_modules
+eqs-within-sections
+theorems-ams
+theorems-chap
+theorems-ams-extended
+\end_modules
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "urlcolor=blue , linkcolor=black"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\bullet 0 2 5 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "l"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "40text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../../S1V2-MMSN_5/images/logoINSA.jpg
+	lyxscale 20
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "l"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "40text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size larger
+Projets GM3
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size larger
+2022/2023
+\series default
+\size default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "l"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "100text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\shape slanted
+\size huge
+Résolution de sudoku
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+S1V3 - MIPP
+\series default
+\shape default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../Downloads/imagesSoduku-en-ligne-1.jpg
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+large
+\backslash
+centering{
+\end_layout
+
+\end_inset
+
+
+\series bold
+Étudiants : Constance BAU et Paul MEHAUD
+\begin_inset Newline newline
+\end_inset
+
+Encadrant : Cendrella CHAHINE
+\series default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Présentation du sujet
+\end_layout
+
+\begin_layout Standard
+Le sudoku est un jeu de réflexion inventé en 1979 par l'Américain Howard
+ GARNS.
+ Ce jeu est notamment inspiré du carré latin.
+\end_layout
+
+\begin_layout Standard
+Le but du jeu est de remplir une grille 
+\begin_inset Formula $9\times9$
+\end_inset
+
+ par des chiffres qui ne se trouvent jamais plus d'une fois dans la même
+ ligne, la même colonne ou le même carré (bloc de 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ cases).
+ Un exemple de grille non résolue est donnée en page de couverture de ce
+ rapport.
+\end_layout
+
+\begin_layout Standard
+La difficulté du jeu est inversement proportionnelle au nombre de chiffres
+ présents sur la grille de départ.
+ Moins il y en a, moins il y a de solutions de placement évidentes, ce qui
+ oblige à 
+\begin_inset Quotes fld
+\end_inset
+
+faire des paris
+\begin_inset Quotes frd
+\end_inset
+
+ : on place un chiffre sur une case en espérant que ce soit la bonne solution
+ mais sans en être sûr.
+\end_layout
+
+\begin_layout Standard
+Pour résoudre ce sudoku de manière automatique, nous avons implémenté un
+ algorithme qui remplit les cases ne présentant qu'une seule possibilité
+ de chiffre.
+ Elle répète cette action jusqu'à ce qu'aucune case ne puisse être remplie
+ de cette manière.
+ Ensuite pour les cases vides restantes nous avons implémenté une solution
+ de backtracking, un algorithme qui fait des hypothèses sur les chiffres
+ à placer.
+ C'est un parcours récursif en profondeur du sudoku qui, s'il mène à un
+ échec, reviens à l'étape précédente.
+ C'est donc ce qu'on appelle un algorithme glouton.
+\end_layout
+
+\begin_layout Chapter
+Modélisation
+\end_layout
+
+\begin_layout Standard
+Dans ce chapitre nous allons expliquer le fonctionnement de notre programme.
+ Pour résoudre une grille de sudoku le programme va tout d'abord remplir
+ les cases dans lesquelles un seul chiffre est possible (comme le ferait
+ un humain).
+ La fonction qui va faire cela s'appelle resoudreUnePossibilite.
+ Puis une fois qu'aucun chiffre ne peut être trouvé de cette manière, s'il
+ reste des cases vides, nous allons uitiliser la 
+\begin_inset Quotes fld
+\end_inset
+
+force brute
+\begin_inset Quotes frd
+\end_inset
+
+ aussi appelé algorithme de backtracking pour remplir les cases.
+ C'est à dire que l'algorithme va mettre dans la première case vide le premier
+ chiffre possible puis continuer ainsi jusqu'à ce qu'il n'y ait plus aucune
+ possibilité pour une case, il reviendra alors à la case précédemment modifiée
+ pour changer le chiffre mis en place.
+ Il fera cela de manière récursive jusqu'au remplissage complet de la grille.
+ Cette technique est aussi utilisée par les humains pour résoudre les sudokus
+ mais à moindre échelle, c'est à dire seulement quand il y a deux possibilités
+ pour plusieurs cases et qu'on ne peut pas déterminer laquelle est la bonne.
+ On appelle cette méthode 
+\begin_inset Quotes fld
+\end_inset
+
+faire des hypothèse
+\begin_inset Quotes frd
+\end_inset
+
+.
+ La fonction resoudreSudoku va utiliser la même méthode mais à grande échelle.
+\end_layout
+
+\begin_layout Standard
+Voici le pseudo code des deux fonctions récursives principales du programme
+ :
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+resoudreUnePossibilite():void
+\end_layout
+
+\begin_layout Plain Layout
+
+Var 
+\end_layout
+
+\begin_layout Plain Layout
+
+	i,j,numTest,temp,compteur1,compteur2 : entier
+\end_layout
+
+\begin_layout Plain Layout
+
+Debut
+\end_layout
+
+\begin_layout Plain Layout
+
+	compteur2 <- 0
+\end_layout
+
+\begin_layout Plain Layout
+
+	Pour i allant de 1 à 9 inc +1 Faire
+\end_layout
+
+\begin_layout Plain Layout
+
+		Pour j allant de 1 à 9 inc +1 Faire
+\end_layout
+
+\begin_layout Plain Layout
+
+			Si grille[i][j]=0
+\end_layout
+
+\begin_layout Plain Layout
+
+				compteur1 <- 1
+\end_layout
+
+\begin_layout Plain Layout
+
+				Pour numTest allant de 1 à 9 inc+1 Faire
+\end_layout
+
+\begin_layout Plain Layout
+
+					Si (nonDansCarre(i,j,numTest) et nonDansLigne(i,numTest) et nonDansColonne(
+j,numTest))
+\end_layout
+
+\begin_layout Plain Layout
+
+						Alors temp <- numTest
+\end_layout
+
+\begin_layout Plain Layout
+
+							  compteur1 <- compteur1 + 1	
+\end_layout
+
+\begin_layout Plain Layout
+
+					FinSi
+\end_layout
+
+\begin_layout Plain Layout
+
+				FinPour
+\end_layout
+
+\begin_layout Plain Layout
+
+				Si compteur1=1 (on regarde s'il y a un seul chiffre possible pour la
+ case et si oui on place le chiffre)
+\end_layout
+
+\begin_layout Plain Layout
+
+					Alors grille[i][j] <- temp
+\end_layout
+
+\begin_layout Plain Layout
+
+						  compteur2=1
+\end_layout
+
+\begin_layout Plain Layout
+
+				FinSi
+\end_layout
+
+\begin_layout Plain Layout
+
+			FinSi
+\end_layout
+
+\begin_layout Plain Layout
+
+		FinPour
+\end_layout
+
+\begin_layout Plain Layout
+
+	Si compteur2=1 (si un chiffre a été placé on recommence la recherche de
+ possibilité unique dans la grille)
+\end_layout
+
+\begin_layout Plain Layout
+
+		Alors resoudreUnePossibilite()
+\end_layout
+
+\begin_layout Plain Layout
+
+	FinSi
+\end_layout
+
+\begin_layout Plain Layout
+
+Fin
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+resoudreSudoku(E i,j : entier) : booléen
+\end_layout
+
+\begin_layout Plain Layout
+
+Var chiffre,i_apres,j_apres : entier
+\end_layout
+
+\begin_layout Plain Layout
+
+Debut
+\end_layout
+
+\begin_layout Plain Layout
+
+	chiffre <- 1
+\end_layout
+
+\begin_layout Plain Layout
+
+	i_apres <- 0
+\end_layout
+
+\begin_layout Plain Layout
+
+	j_apres <- 0
+\end_layout
+
+\begin_layout Plain Layout
+
+	Si grille[i][j]!=0
+\end_layout
+
+\begin_layout Plain Layout
+
+		Alors Si (i=9 et j=9)
+\end_layout
+
+\begin_layout Plain Layout
+
+			  	Alors retourner True
+\end_layout
+
+\begin_layout Plain Layout
+
+			  FinSi
+\end_layout
+
+\begin_layout Plain Layout
+
+			  Si i<10
+\end_layout
+
+\begin_layout Plain Layout
+
+			  	Alors i++
+\end_layout
+
+\begin_layout Plain Layout
+
+			  Sinon Si j<10
+\end_layout
+
+\begin_layout Plain Layout
+
+					Alors i <- 0
+\end_layout
+
+\begin_layout Plain Layout
+
+						  j <- j+1
+\end_layout
+
+\begin_layout Plain Layout
+
+			  	  FinSi
+\end_layout
+
+\begin_layout Plain Layout
+
+			  FinSi
+\end_layout
+
+\begin_layout Plain Layout
+
+			  Si resoudreSudoku(i,j)
+\end_layout
+
+\begin_layout Plain Layout
+
+			  	Alors retourner Vrai
+\end_layout
+
+\begin_layout Plain Layout
+
+			  Sinon retourner Faux
+\end_layout
+
+\begin_layout Plain Layout
+
+			  FinSi
+\end_layout
+
+\begin_layout Plain Layout
+
+	FinSi
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	Si grille[i][j]=0
+\end_layout
+
+\begin_layout Plain Layout
+
+		TantQue chiffre <= 9 Faire
+\end_layout
+
+\begin_layout Plain Layout
+
+			Si (nonDansCarre(i,j,chiffre) et nonDansLigne(i,chiffre) et nonDansColonne(j,
+chiffre) (on vérifie si le chiffre est possible)
+\end_layout
+
+\begin_layout Plain Layout
+
+				Alors grille[i][j] <- chiffre	
+\end_layout
+
+\begin_layout Plain Layout
+
+					  Si (i=9 et j=9)
+\end_layout
+
+\begin_layout Plain Layout
+
+					  	Alors retourner Vrai
+\end_layout
+
+\begin_layout Plain Layout
+
+					  FinSi
+\end_layout
+
+\begin_layout Plain Layout
+
+					  Si i<9
+\end_layout
+
+\begin_layout Plain Layout
+
+					  	Alors i_apres <- i+1
+\end_layout
+
+\begin_layout Plain Layout
+
+					  Sinon i_apres <- 0
+\end_layout
+
+\begin_layout Plain Layout
+
+						    j_apres <- j+1
+\end_layout
+
+\begin_layout Plain Layout
+
+					  FinSi
+\end_layout
+
+\begin_layout Plain Layout
+
+					  Si resoudreSudoku(i_apres, j_apres)
+\end_layout
+
+\begin_layout Plain Layout
+
+					  	Alors retourner 1
+\end_layout
+
+\begin_layout Plain Layout
+
+					  FinSi
+\end_layout
+
+\begin_layout Plain Layout
+
+			FinSi
+\end_layout
+
+\begin_layout Plain Layout
+
+			chiffre <- chiffre + 1
+\end_layout
+
+\begin_layout Plain Layout
+
+		FinPour
+\end_layout
+
+\begin_layout Plain Layout
+
+		grille[i][j] <- 0
+\end_layout
+
+\begin_layout Plain Layout
+
+		retourner Faux
+\end_layout
+
+\begin_layout Plain Layout
+
+	FinSi
+\end_layout
+
+\begin_layout Plain Layout
+
+Fin
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Explication des différentes fonctions :
+\end_layout
+
+\begin_layout Standard
+void remplissageGrille()
+\end_layout
+
+\begin_layout Standard
+Cette fonction remplit la grille qui est une variable globale du programme
+ (sous forme d'un tableau statique) grâce à un fichier de données choisi
+ par l'utilisateur.
+\end_layout
+
+\begin_layout Standard
+int dansLaLigne(int ligne, int chiffre)
+\end_layout
+
+\begin_layout Standard
+Cette fonction permet de savoir si le chiffre mis en entrée est dans la
+ ligne mise en entrée, s'il l'est elle renvoie 1, 0 sinon.
+\end_layout
+
+\begin_layout Standard
+int dansLaColonne(int colonne, int chiffre)
+\end_layout
+
+\begin_layout Standard
+Cette fonction permet de savoir si le chiffre mis en entrée est dans la
+ colonne mise en entrée, s'il l'est elle renvoie 1, 0 sinon.
+\end_layout
+
+\begin_layout Standard
+int quelleBorne(int indice)
+\end_layout
+
+\begin_layout Standard
+Cette fonction est utile pour trouver les borne du carre dans lequel la
+ fonction dansLeCarre recherche un chiffre
+\end_layout
+
+\begin_layout Standard
+int dansLeCarre(int i, int j, int chiffre)
+\end_layout
+
+\begin_layout Standard
+Cette fonction permet de savoir si le chiffre mis en entree est dans le
+ carre comportant la case de coordonnées [i][j] , i et j étan les coordonnées
+ mises en entrée.
+\end_layout
+
+\begin_layout Standard
+void afficheSudoku()
+\end_layout
+
+\begin_layout Standard
+Cette fonction affiche la grille mise en varaible globale du programme.
+\end_layout
+
+\begin_layout Standard
+void resoudreUnePossibilite( )
+\end_layout
+
+\begin_layout Standard
+Cett fonction remplit les cases vides de la grille 
+\end_layout
+
+\begin_layout Standard
+int resoudreSudoku(int i, int j)
+\end_layout
+
+\begin_layout Standard
+Cette fonction remplit les cases vides de la grille avec la force brute,
+ elle fait des suppositions, des hypothèses sur les chiffres à mettre dans
+ les cases et changent ces hypothèses dès qu'une case vide ne possède plus
+ aucun chiffre possible.Elle fait cela jusqu'à pouvoir remplir entièrement
+ la grille.
+ 
+\end_layout
+
+\begin_layout Chapter
+Choix d'implémentations et explications
+\end_layout
+
+\begin_layout Standard
+Pour l'implémentation nous avons choisi des tableaux statiques car la taille
+ d'une grille de sudoku est toujours la même.
+ On a choisi que la grille de sudoku soit une variable globale du programme
+ donc une varaible de profondeur 0 qui peut être modifié dans chaque fonction
+ du programme.
+\end_layout
+
+\begin_layout Chapter
+Résultats des jeux d'essais
+\end_layout
+
+\begin_layout Standard
+Pour tester notre algorithme nous avons choisi différentes grilles d'essais,
+ dont certaines sont fausses.
+ 
+\end_layout
+
+\begin_layout Standard
+Afin mesurer le temps d'exécution et vérifier si la difficulté d'une grille
+ (nombre de chiffres déjà présents dans une grille) influait sur le temps
+ d'exécution, nous avons implémenté un timer grâce au 
+\begin_inset CommandInset href
+LatexCommand href
+name "site suivant"
+target "https://ichi.pro/fr/8-facons-de-mesurer-le-temps-d-execution-en-c-c-79591185633529"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Grilles de difficulté faible
+\end_layout
+
+\begin_layout Standard
+Pour commencer, nous avons testé la résolution de deux grilles de difficulté
+ faible :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../Downloads/grille2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Grille 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../Downloads/grille1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Grille 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ce qui donne alors, après exécution du programme :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../Downloads/Rgrille1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Résultat Grille 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../Downloads/Rgrille2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Résultat Grille 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pour la grille 1, le temps d'exécution est de 
+\begin_inset Formula $0,001\,10$
+\end_inset
+
+ secondes et, pour la grille 2, il est de 
+\begin_inset Formula $0,000\,44$
+\end_inset
+
+ secondes.
+\end_layout
+
+\begin_layout Section
+Grille de difficulté élevée
+\end_layout
+
+\begin_layout Standard
+Pour poursuivre les tests, nous avons créé spécialement une grille très
+ difficile :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../Downloads/grille3.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Grille 3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+La difficulté de cette grille réside dans le fait qu'il n'y a qu'une seule
+ occurrence de chaque chiffres.
+ Ces chiffres sont répartis aléatoirement dans la grille de telle manière
+ qu'il n'y en ai qu'un par ligne, colonne et carré.
+\end_layout
+
+\begin_layout Standard
+Voici ce qu'on obtient comme résultat :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../Downloads/Rgrille3.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Résultat Grille 3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+En terme de temps d'exécution, on obtient : 
+\begin_inset Formula $0,000\,70$
+\end_inset
+
+ secondes.
+ Ce temps est plus faible que celui de la résolution de la grille 1.
+ On peut donc en conclure que le temps d'exécution n'est pas corrélé avec
+ la difficulté de la grille.
+\end_layout
+
+\begin_layout Section
+Grille vide
+\end_layout
+
+\begin_layout Standard
+Afin de tester notre algorithme sur des cas limites, nous avons commencé
+ par tester s'il pouvait résoudre une grille vide.
+ Voici le résultat obtenu :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../Downloads/Rgrille_vide.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Résultat Grille vide
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Ce résultat est obtenu au bout de 
+\begin_inset Formula $0,000\,71$
+\end_inset
+
+ secondes, à peine plus que la grille précédente.
+ Ici, on voit bien comment l'algorithme fonctionne : il remplit la grille
+ colonne par colonne, en partant de la gauche.
+\end_layout
+
+\begin_layout Section
+Grilles fausses
+\end_layout
+
+\begin_layout Standard
+Enfin, pour continuer à tester notre algorithme, nous l'avons testé sur
+ des grilles volontairement fausses.
+ La première est une grille est une grille où les chiffres du premier carré
+ ne respectent pas la règle de l'unicité de présence au sein des colonnes,
+ lignes et carrés.
+ Nous avons aussi rajouté 3 chiffres aléatoires.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../Downloads/grille_fausse1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Grille fausse 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Ensuite, nous avons testé une autre grille fausse, qui est la réplique de
+ la grille 1, à l'exception près que le premier chiffre en haut à gauche
+ a été remplacé par 
+\begin_inset Formula $10$
+\end_inset
+
+, un chiffre impossible au sudoku.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../Downloads/grille_fausse2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Grille fausse 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A l'exécution, pour la première grille le programme ne rend rien mais arrête
+ son exécution et nous donne un temps d'exécution de 
+\begin_inset Formula $4,196\,46$
+\end_inset
+
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+secondes.
+\end_layout
+
+\begin_layout Standard
+Pour la deuxième grille voici le résultat, obtenu en 
+\begin_inset Formula $0,001\,07$
+\end_inset
+
+ secondes :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../Downloads/Rgrille_fausse2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Résultat Grille fausse 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Ce résultat est strictement identique à celui de la grille 1 (sauf le 
+\begin_inset Formula $10$
+\end_inset
+
+ au début).
+\end_layout
+
+\begin_layout Chapter
+Synthèse critique
+\end_layout
+
+\begin_layout Standard
+Pour ce qui est des résultats de la résolution de grilles de sudoku, on
+ a remarqué que le temps d'exécution n'était pas significatif et que même
+ si on donne en entrée une grille fausse, le programme ne plante pas.
+\end_layout
+
+\end_body
+\end_document

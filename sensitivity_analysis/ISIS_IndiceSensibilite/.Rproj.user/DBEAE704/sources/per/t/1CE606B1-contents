@@ -1,0 +1,206 @@
+@article{benard2022mean,
+  title={Mean decrease accuracy for random forests: inconsistency, and a practical solution via the Sobol-MDA},
+  author={B{\'e}nard, Cl{\'e}ment and Da Veiga, S{\'e}bastien and Scornet, Erwan},
+  journal={Biometrika},
+  volume={109},
+  number={4},
+  pages={881--900},
+  year={2022},
+  publisher={Oxford University Press}
+}
+
+@book{da2021basics,
+  title={Basics and trends in sensitivity analysis: Theory and practice in R},
+  author={Da Veiga, S{\'e}bastien and Gamboa, Fabrice and Iooss, Bertrand and Prieur, Cl{\'e}mentine},
+  year={2021},
+  publisher={SIAM}
+}
+
+@article{da2021kernel,
+  title={Kernel-based ANOVA decomposition and Shapley effects--Application to global sensitivity analysis},
+  author={Da Veiga, S{\'e}bastien},
+  journal={arXiv preprint arXiv:2101.05487},
+  year={2021}
+}
+
+@article{faivre2013analyse,
+  title={Analyse de sensibilit{\'e} et exploration de mod{\`e}les: application aux sciences de la nature et de l'environnement},
+  author={Faivre, Robert and Makowski, David and Mah{\'e}vas, St{\'e}phanie and Iooss, Bertrand},
+  journal={Analyse de sensibilit{\'e} et exploration de mod{\`e}les},
+  pages={1--352},
+  year={2013},
+  publisher={Editions Quae}
+}
+
+@book{breiman2017classification,
+  title={Classification and regression trees},
+  author={Breiman, Leo},
+  year={2017},
+  publisher={Routledge}
+}
+
+@article{breiman2001random,
+  title={Random forests},
+  author={Breiman, Leo},
+  journal={Machine learning},
+  volume={45},
+  pages={5--32},
+  year={2001},
+  publisher={Springer}
+}
+
+@article{zaccour1988valeur,
+  title={Valeur de Shapley et partage {\'e}quitable des ressources},
+  author={Zaccour, Georges and others},
+  journal={L'Actualit{\'e} {\'e}conomique},
+  volume={64},
+  number={1},
+  pages={96--121},
+  year={1988},
+  publisher={{\'E}rudit}
+}
+
+@article{wright2015ranger,
+  title={ranger: A fast implementation of random forests for high dimensional data in C++ and R},
+  author={Wright, Marvin N and Ziegler, Andreas},
+  journal={arXiv preprint arXiv:1508.04409},
+  year={2015}
+}
+
+@inproceedings{scornet2023trees,
+  title={Trees, forests, and impurity-based variable importance in regression},
+  author={Scornet, Erwan},
+  booktitle={Annales de l'Institut Henri Poincare (B) Probabilites et statistiques},
+  volume={59},
+  number={1},
+  pages={21--52},
+  year={2023},
+  organization={Institut Henri Poincar{\'e}}
+}
+
+@article{cutler2012random,
+  title={Random forests},
+  author={Cutler, Adele and Cutler, D Richard and Stevens, John R},
+  journal={Ensemble machine learning: Methods and applications},
+  pages={157--175},
+  year={2012},
+  publisher={Springer}
+}
+
+@manual{breimanManual2002,
+        title={Manual on setting up, using, and understanding random forests},
+        author={Leo Breiman},journal={Statistics Department University of California Berkeley},
+        year={2002},
+        address={USA, CA}
+}
+
+@article{wright2016little,
+  title={Do little interactions get lost in dark random forests?},
+  author={Wright, Marvin N and Ziegler, Andreas and K{\"o}nig, Inke R},
+  journal={BMC bioinformatics},
+  volume={17},
+  pages={1--10},
+  year={2016},
+  publisher={Springer}
+}
+
+@article{mahevas2004isis,
+  title={ISIS-Fish, a generic and spatially explicit simulation tool for evaluating the impact of management measures on fisheries dynamics},
+  author={Mah{\'e}vas, St{\'e}phanie and Pelletier, Dominique},
+  journal={Ecological modelling},
+  volume={171},
+  number={1-2},
+  pages={65--84},
+  year={2004},
+  publisher={Elsevier}
+}
+
+@article{genuer2010variable,
+  title={Variable selection using random forests},
+  author={Genuer, Robin and Poggi, Jean-Michel and Tuleau-Malot, Christine},
+  journal={Pattern recognition letters},
+  volume={31},
+  number={14},
+  pages={2225--2236},
+  year={2010},
+  publisher={Elsevier}
+}
+
+@article{genuer2010variable,
+  title={Variable selection using random forests},
+  author={Genuer, Robin and Poggi, Jean-Michel and Tuleau-Malot, Christine},
+  journal={Pattern recognition letters},
+  volume={31},
+  number={14},
+  pages={2225--2236},
+  year={2010},
+  publisher={Elsevier}
+}
+
+@article{williamson2023general,
+  title={A general framework for inference on algorithm-agnostic variable importance},
+  author={Williamson, Brian D and Gilbert, Peter B and Simon, Noah R and Carone, Marco},
+  journal={Journal of the American Statistical Association},
+  volume={118},
+  number={543},
+  pages={1645--1658},
+  year={2023},
+  publisher={Taylor \& Francis}
+}
+
+@incollection{shapley1953value,
+  title={A value for n-persons game},
+  author={Shapley, Lloyd S.},
+  booktitle={Contributions to the Theory of Games II},
+  editor={Kuhn, Harold W. and Tucker, Albert W.},
+  volume={volume 28},
+  pages={pages 307-317},
+  publisher={Princeton University Press},
+  address={Princeton, NJ},
+  year={1953}
+}
+
+@online{milieumarinfrance,
+  author = {milieumarinfrance},
+  title = {Directive-cadre pour la planification de l'espace maritime (DCPEM) },
+  year = {2014},
+  url = {https://www.milieumarinfrance.fr/Nos-rubriques/Cadre-reglementaire/Directive-Cadre-pour-la-planification-de-l-espace-maritime},
+  note = {Consulté le 19 mars 2024}
+}
+
+
+@online{milieumarinfrance2,
+  author = {milieumarinfrance},
+  title = {Directive Cadre stratégie pour le milieu marin (DCSMM) },
+  year = {2008},
+  url = {https://www.milieumarinfrance.fr/Nos-rubriques/Cadre-reglementaire/Directive-Cadre-strategie-pour-le-milieu-marin},
+  note = {Consulté le 19 mars 2024}
+}
+
+@book{saltelli2004sensitivity,
+  title={Sensitivity analysis in practice: a guide to assessing scientific models},
+  author={Saltelli, Andrea and Tarantola, Stefano and Campolongo, Francesca and Ratto, Marco and others},
+  volume={1},
+  year={2004},
+  publisher={Wiley Online Library}
+}
+
+@booklet{mimi,
+  author = {équipe MIMI},
+  title = {mimi Partager les représentations, les connaissances et les incertitudes des socio-écosystèmes marins livret 2},
+  year = {2023},
+  
+  url = {https://projet-mimi.fr/},
+  urldate = {19 mars 2024}
+}
+
+@booklet{mimi1,
+  author = {équipe MIMI},
+  title = {mimi Partager les représentations, les connaissances et les incertitudes des socio-écosystèmes marins livret 1},
+  year = {2022},
+  
+  url = {https://projet-mimi.fr/},
+  urldate = {19 mars 2024}
+}
+
+

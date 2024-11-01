@@ -1,0 +1,91 @@
+"0",""
+"0","#rm(list=ls())"
+"0","library(knitr)"
+"0","library(magrittr)"
+"0","library(dplyr)"
+"2","
+Attachement du package : ‘dplyr’
+
+"
+"2","Les objets suivants sont masqués depuis ‘package:stats’:
+
+    filter, lag
+
+"
+"2","Les objets suivants sont masqués depuis ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","library(ggplot2)"
+"0","library(psych)"
+"2","
+Attachement du package : ‘psych’
+
+"
+"2","Les objets suivants sont masqués depuis ‘package:ggplot2’:
+
+    %+%, alpha
+
+"
+"0","library(copula)"
+"0","library(tidyverse)"
+"2","── [1mAttaching core tidyverse packages[22m ───────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 2.0.0 ──
+[32m✔[39m [34mforcats  [39m 1.0.0     [32m✔[39m [34mstringr  [39m 1.5.1
+[32m✔[39m [34mlubridate[39m 1.9.3     [32m✔[39m [34mtibble   [39m 3.2.1
+[32m✔[39m [34mpurrr    [39m 1.0.2     [32m✔[39m [34mtidyr    [39m 1.3.1
+[32m✔[39m [34mreadr    [39m 2.1.5     "
+"2","── [1mConflicts[22m ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+[31m✖[39m [34mpsych[39m::[32m%+%()[39m          masks [34mggplot2[39m::%+%()
+[31m✖[39m [34mpsych[39m::[32malpha()[39m        masks [34mggplot2[39m::alpha()
+[31m✖[39m [34mtidyr[39m::[32mextract()[39m      masks [34mmagrittr[39m::extract()
+[31m✖[39m [34mdplyr[39m::[32mfilter()[39m       masks [34mstats[39m::filter()
+[31m✖[39m [34mlubridate[39m::[32minterval()[39m masks [34mcopula[39m::interval()
+[31m✖[39m [34mdplyr[39m::[32mlag()[39m          masks [34mstats[39m::lag()
+[31m✖[39m [34mpurrr[39m::[32mset_names()[39m    masks [34mmagrittr[39m::set_names()
+[36mℹ[39m Use the ]8;;http://conflicted.r-lib.org/conflicted package]8;; to force all conflicts to become errors"
+"0","library(ranger)"
+"0","library(sobolMDA)"
+"2","Registered S3 methods overwritten by 'sobolMDA':
+  method                  from  
+  predict.ranger          ranger
+  predict.ranger.forest   ranger
+  print.ranger            ranger
+  print.ranger.forest     ranger
+  print.ranger.prediction ranger
+"
+"2","
+Attachement du package : ‘sobolMDA’
+
+"
+"2","Les objets suivants sont masqués depuis ‘package:ranger’:
+
+    csrf, getTerminalNodeIDs, holdoutRF, importance, importance_pvalues, predictions, ranger, timepoints, treeInfo
+
+"
+"0","library(sensitivity)"
+"2","Registered S3 method overwritten by 'sensitivity':
+  method    from 
+  print.src dplyr
+"
+"2","
+Attachement du package : ‘sensitivity’
+
+"
+"2","L'objet suivant est masqué depuis ‘package:tidyr’:
+
+    extract
+
+"
+"2","L'objet suivant est masqué depuis ‘package:dplyr’:
+
+    src
+
+"
+"2","L'objet suivant est masqué depuis ‘package:magrittr’:
+
+    extract
+
+"
+"0","source(""./R_utiles/fct_metamodeleEtAS.R"")"
+"0",""

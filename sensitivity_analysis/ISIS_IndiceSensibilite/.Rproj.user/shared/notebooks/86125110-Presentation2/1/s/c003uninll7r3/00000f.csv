@@ -1,0 +1,7 @@
+"0","ishigami1 <- function(X1, X2, X3) {"
+"0","  A <- 7"
+"0","  B <- 0.1"
+"0","  sin(X1) + A * sin(X2) ^ 2 + B * X3 ^ 4 * sin(X1)"
+"0","}"
+"0","curve(ishigami1(x,pi/2,pi/3), from = -pi, to = pi,"
+"0","      col = ""red"", main = ""Graphe de la fonction Ishigami en fonction de x1 (x2 et x3 fixees)"")"

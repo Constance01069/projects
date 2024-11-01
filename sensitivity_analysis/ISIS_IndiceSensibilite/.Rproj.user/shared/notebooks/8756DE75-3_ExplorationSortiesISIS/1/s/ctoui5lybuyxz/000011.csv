@@ -1,0 +1,1 @@
+"0","ggplot(result_ref, aes(x=year, y=biomasseFeconde))+geom_point(color=""#265DAB"")+geom_line(color=""#265DAB"")"

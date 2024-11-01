@@ -1,0 +1,8 @@
+"0",""
+"0",""
+"0",""
+"0",""
+"0","ggplot(result_paramDep, aes(x=year, y=biomasse,group=year, color=year))+"
+"0","  geom_boxplot()+"
+"0","  geom_point()+ggtitle(paste(""boîtes à moustaches de la biomasse par année""))+theme(plot.title = element_text(size = 10))"
+"0",""

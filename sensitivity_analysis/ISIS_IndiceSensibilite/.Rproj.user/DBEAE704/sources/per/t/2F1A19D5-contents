@@ -1,0 +1,439 @@
+---
+title: "Exploration des sorties ISIS"
+author: "Constance Bau"
+date: "4 mars 2024"
+output:
+  pdf_document:
+    fig_width: 4.5
+    fig_height: 3.5
+    number_sections: true
+    toc: true
+    keep_tex: true
+  word_document:
+    toc: true
+  html_document: default
+---
+
+```{r setup2, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,cache=FALSE)
+```
+
+```{r, include = FALSE}
+library(knitr)
+library(magrittr)
+library(dplyr)
+library(ggplot2)
+library(psych)
+library(copula)
+source("./R_utiles/fct_graphesExploratoires.R")
+
+```
+
+
+
+
+## Exploration des sorties ISIS
+
+Dans cette partie, nous étudions la dynamique temporelle des sorties d'ISIS, la variabilité des sorties lorsqu'un seul des paramètres varie et que les autres sont fixés ainsi que la propagation de l'incertitude d'entrée sur les sorties (par année ainsi que sa série temporelle).
+
+```{r chargement,echo=FALSE}
+
+# Chemin où trouver les sorties Rds
+cheminRData<- './Rdata/'
+
+# Nom des Rds en fonction des différentes combinaisons d'entrées pour les simulations
+
+rdsSurvie <- "paramSurvie"
+rdsDerive <- "paramDerive"
+rdsStandardisation <- "paramStandardisation"
+rdsMortalite <- "paramMortalite"
+rdsFecondite <- "paramFecondite"
+
+rdsParamDep <- "paramDep5"
+rdsParamIndep <- "paramIndep"
+rdsRef <- "testRef"
+
+
+
+
+# import des rds
+result_survie <- readRDS(file=paste0(cheminRData, rdsSurvie))
+result_derive <- readRDS(file=paste0(cheminRData, rdsDerive))
+result_standardisation <- readRDS(file=paste0(cheminRData, rdsStandardisation))
+result_mortalite <- readRDS(file=paste0(cheminRData, rdsMortalite))
+result_fecondite <- readRDS(file=paste0(cheminRData, rdsFecondite))
+
+result_paramDep <-  readRDS(file=paste0(cheminRData, rdsParamDep))
+result_paramIndep <-  readRDS(file=paste0(cheminRData, rdsParamIndep))
+result_ref <- readRDS(file=paste0(cheminRData, rdsRef))
+
+```
+
+
+
+
+
+ 
+### Quelle est la dynamique temporelle des sorties lorsque les entrées sont mises à leur valeur de référence ? {.tabset .tabset-fade .tabset-pills}
+
+
+
+#### Biomasse
+
+La biomasse varie entre 2 350 000 et 2 100 000 tonnes, ce qui ne présente pas un intervalle très large. Ceci est plutôt normal car les paramètres sont mis à leurs valeurs de référence.
+
+
+
+```{r ref,echo=FALSE, warning=FALSE}
+ggplot(result_ref, aes(x=year, y=biomasse))+geom_point(color="#88CCEE")+geom_line(color="#88CCEE")
+
+```
+
+
+#### Biomasse féconde
+
+
+On remarque que la biomasse féconde n'a pas la même diminution que la biomasse entre l'année 0 et l'année 2. On peut supposer que des langoustines sont passées de non fécondes à fécondes entre ces années ce qui a compensé les pertes.
+
+
+```{r refbf,echo=FALSE, warning=FALSE}
+ggplot(result_ref, aes(x=year, y=biomasseFeconde))+geom_point(color="#265DAB")+geom_line(color="#265DAB")
+#ggplot(result_ref025, aes(x=year, y=biomasseFeconde))+geom_point(color="#265DAB")+ggtitle(paste("Evolution de la biomasse féconde(en tonne) en fonction du temps (en année)"))+geom_line(color="#265DAB")
+```
+
+#### Poids des captures de pêche
+
+Les captures de pêche diminuent jusqu'à atteindre un plateau. Ceci peut s'expliquer par le fait que les effectifs initiaux comportaient beaucoup de langoustines de tailles suffisantes pour être pêchées. Ensuite, cela commence à s'équilibrer avec les paramètres de référence pour revenir à une distribution plus classique. 
+
+
+```{r refc,echo=FALSE,warning=FALSE}
+ggplot(result_ref, aes(x=year, y=captures))+geom_point(color="hotpink3")+geom_line(color="hotpink3")
+#ggplot(result_ref025, aes(x=year, y=captures))+geom_point(color="hotpink3")+ggtitle(paste("Evolution du poids des captures (en tonne) en fonction du temps (en année)"))+geom_line(color="hotpink3")
+```
+
+### De quelle manière varient les sorties lorsqu'un seul des paramètres varie et que les autres sont fixés à leur valeur de référence ? {.tabset .tabset-fade .tabset-pills}
+
+
+
+
+#### Survie {.tabset .tabset-fade .tabset-pills}
+
+Etudions les variations des sorties lorsque l'on fait varier la proportion de survie après relâchement.
+
+##### Biomasse 
+
+La biomasse augmente lorsque la proportion de survie après relâchement augmente, le contraire nous aurait alerté.
+
+
+```{r aocv, echo=FALSE}
+
+#par(mfrow=c(1,2))
+
+ggplot(result_survie, aes(x=Survie, y=biomasse))+geom_point(color="#88CCEE")+facet_wrap(~year)+ggtitle(paste("Année"))
+
+#{r ,fig.width=4, fig.height=4,echo=FALSE}
+
+
+
+```
+
+##### Biomasse Feconde
+
+La biomasse féconde augmente lorsque la proportion de survie après relâchement augmente, mais seulement à partir de la deuxième année. Ceci s'explique car les langoustines relâchées sont celles inférieures à une certaine taille et par conséquent celles non fécondes. Il faut attendre un an ou plus pour qu'elle passe à l'âge fécond.
+
+
+```{r ccxc,echo=FALSE}
+
+
+ggplot(result_survie, aes(x=Survie, y=biomasseFeconde))+geom_point(color="#265DAB")+ggtitle(paste("Année"))+facet_wrap(~year)
+
+
+
+```
+
+
+
+##### Poids des captures
+
+Le poids des captures de pêche augmente lui aussi lorsque la proportion de survie après relâchement augmente.
+
+
+```{r azsss,echo=FALSE}
+
+
+
+ggplot(result_survie, aes(x=Survie, y=captures))+geom_point(color="hotpink3")+ggtitle(paste("Année"))+facet_wrap(~year)+ggtitle(paste("Année"))
+
+
+```
+
+
+#### Derive {.tabset .tabset-fade .tabset-pills}
+
+Etudions les variations des sorties lorsque l'on fait varier la dérive d'efficacité de pêche.
+
+
+
+##### Biomasse
+
+La diminution de la biomasse suivant l'augmentation de la dérive s'intensifie au cours des années. Ceci s'explique car si la dérive augmente cela signifie que les pêcheurs s'améliorent d'années en années.
+
+```{r aos, echo=FALSE}
+
+#par(mfrow=c(1,2))
+
+ggplot(result_derive, aes(x=Derive, y=biomasse))+geom_point(color="#88CCEE")+facet_wrap(~year)+ggtitle(paste("Année"))
+
+#{r ,fig.width=4, fig.height=4,echo=FALSE}
+
+
+
+```
+
+##### Biomasse Feconde
+
+
+La diminution de la biomasse féconde suivant l'augmentation de la dérive s'intensifie au cours des années. Ceci s'explique car si la dérive augmente cela signifie que les pêcheurs s'améliorent d'années en années.
+
+
+```{r ccs,echo=FALSE}
+
+
+ggplot(result_derive, aes(x=Derive, y=biomasseFeconde))+geom_point(color="#265DAB")+ggtitle(paste("Année"))+facet_wrap(~year)
+
+
+
+```
+
+
+
+##### Poids des captures
+
+
+L'augmentation des captures de pêche suivant l'augmentation de la dérive s'intensifie au cours des années. Ceci s'explique car si la dérive augmente cela signifie que les pêcheurs s'améliorent d'années en années.
+
+
+```{r azs,echo=FALSE}
+
+
+
+ggplot(result_derive, aes(x=Derive, y=captures))+geom_point(color="hotpink3")+ggtitle(paste("Année"))+facet_wrap(~year)
+
+
+```
+
+#### Standardisation {.tabset .tabset-fade .tabset-pills}
+
+Etudions les variations des sorties lorsque l'on fait varier le facteur de standardisation des engins.
+
+##### Biomasse 
+
+La biomasse diminue lorsque la standardisation augmente.
+
+
+```{r aps, echo=FALSE}
+
+#par(mfrow=c(1,2))
+
+ggplot(result_standardisation, aes(x=Standardisation, y=biomasse))+geom_point(color="#88CCEE")+facet_wrap(~year)+ggtitle(paste("Année"))
+
+#{r ,fig.width=4, fig.height=4,echo=FALSE}
+
+
+
+```
+
+##### Biomasse Feconde
+
+La biomasse féconde diminue lorsque la standardisation augmente.
+
+
+```{r cp,echo=FALSE}
+
+
+ggplot(result_standardisation, aes(x=Standardisation, y=biomasseFeconde))+geom_point(color="#265DAB")+ggtitle(paste("Année"))+facet_wrap(~year)
+
+
+
+```
+
+
+
+##### Poids des captures
+
+
+L'année 0, les captures de pêche augmentent lorsque la standardisation augmente. Les années suivantes, elles stagnent voir diminuent, ce qui peut s'expliquer par le fait que les pêcheurs en ont trop pêcher l'année 0 et qu'il faut du temps pour que le stock se refasse.
+
+
+```{r aq,echo=FALSE}
+
+
+
+ggplot(result_standardisation, aes(x=Standardisation, y=captures))+geom_point(color="hotpink3")+ggtitle(paste("Année"))+facet_wrap(~year)
+
+
+```
+
+#### Mortalite {.tabset .tabset-fade .tabset-pills}
+
+Etudions les variations des sorties lorsque l'on fait varier la mortalité naturelle.
+
+##### Biomasse
+
+La biomasse diminue lorsque la mortalité naturelle augmente, le contraire nous aurait alerté.
+
+
+```{r ag, echo=FALSE}
+
+#par(mfrow=c(1,2))
+
+ggplot(result_mortalite, aes(x=Mortalite, y=biomasse))+facet_wrap(~year)+ggtitle(paste("Année"))+geom_point(color="#88CCEE")
+
+#{r ,fig.width=4, fig.height=4,echo=FALSE}
+
+
+
+```
+
+##### Biomasse Feconde
+
+La biomasse de géniteurs diminue lorsque la mortalité naturelle augmente, le contraire nous aurait alerté.
+
+
+```{r cm,echo=FALSE}
+
+
+ggplot(result_mortalite, aes(x=Mortalite, y=biomasseFeconde))+geom_point(color="#265DAB")+ggtitle(paste("Année"))+facet_wrap(~year)
+
+
+
+```
+
+
+
+##### Poids des captures
+
+Le poids des captures diminue lorsque la mortalité naturelle augmente, le contraire nous aurait alerté.
+
+
+```{r aj,echo=FALSE}
+
+
+
+ggplot(result_mortalite, aes(x=Mortalite, y=captures))+geom_point(color="hotpink3")+ggtitle(paste("Année"))+facet_wrap(~year)
+
+
+```
+
+
+#### Fecondite {.tabset .tabset-fade .tabset-pills}
+
+Etudions les variations des sorties lorsque l'on fait varier la fécondité.
+
+##### Biomasse
+
+Lorsque la fécondité augmente, l'augmentation de la biomasse s'intensifie au cours des années. En effet, comme le modèle prédit la biomasse en unité de masse, les nouveaux nés qui ont un poids faible ne font pas beaucoup augmenté le poids de la biomasse la 1ère année mais plus ils grandissent plus ils font augmenté le poids de la biomasse totale.
+
+```{r aocbv, echo=FALSE}
+
+#par(mfrow=c(1,2))
+
+ggplot(result_fecondite, aes(x=Fecondite, y=biomasse))+geom_point(color="#88CCEE")+facet_wrap(~year)+ggtitle(paste("Année"))
+
+#{r ,fig.width=4, fig.height=4,echo=FALSE}
+
+
+
+```
+
+##### Biomasse Feconde 
+
+L'augmentation du taux de fécondité ne fait augmenté la biomasse féconde qu'à partir de la troisième année car c'est le temps qu'il faut au nouveaux-nés pour passés de non féconds à féconds.
+
+```{r ccxbc,echo=FALSE}
+
+
+ggplot(result_fecondite, aes(x=Fecondite, y=biomasseFeconde))+geom_point(color="#265DAB")+ggtitle(paste("Année"))+facet_wrap(~year)
+
+
+
+```
+
+
+
+##### Poids des captures
+
+Lorsque la fécondité augmente, l'augmentation du poids des captures s'intensifie au cours des années car les nouveaux nés grossissent progressiment.
+
+
+```{r abzsss,echo=FALSE}
+
+
+
+ggplot(result_fecondite, aes(x=Fecondite, y=captures))+geom_point(color="hotpink3")+ggtitle(paste("Année"))+facet_wrap(~year)
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Quelle est la dynamique temporelle des sorties et son incertitude lorsque les paramètres d'entrée varient conjointement sur leur intervalle de confiance respectif et avec une hypothèse de dépendance ? {.tabset .tabset-fade .tabset-pills}
+
+
+#### Biomasse
+
+L'incertitude sur les sorties augmente avec les années. En effet, l'incertitude se propage à chaque pas de temps. 
+
+```{r aus,echo=FALSE}
+
+
+
+
+ggplot(result_paramDep, aes(x=year, y=biomasse,group=year, color=year))+
+  geom_boxplot()+
+  geom_point()+ggtitle(paste("boîtes à moustaches de la biomasse par année"))+theme(plot.title = element_text(size = 10))
+
+```
+
+
+#### Biomasse Feconde
+
+
+L'incertitude sur les sorties augmente avec les années. En effet, l'incertitude se propage à chaque pas de temps. 
+
+
+```{r auxs,echo=FALSE}
+
+
+ggplot(result_paramDep, aes(x=year, y=biomasseFeconde,group=year, color=year))+
+  geom_boxplot()+
+  geom_point()+ggtitle(paste("boîtes à moustaches de la biomasse féconde par année"))+theme(plot.title = element_text(size = 10))
+
+```
+
+
+#### Poids des captures de pêche
+
+L'incertitude est très grande la première année, ce qui peut être dû à la distribution particulière des effectifs initiaux. Ensuite l'incertitude augmente avec le temps, comme dans les cas précédents.
+
+
+```{r auxxs,echo=FALSE}
+
+
+ggplot(result_paramDep, aes(x=year, y=captures,group=year, color=year))+
+  geom_boxplot()+
+  geom_point()+ggtitle(paste("boîtes à moustaches du poids des captures par année"))+theme(plot.title = element_text(size = 10))
+
+```
+
+

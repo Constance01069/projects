@@ -1,0 +1,4 @@
+"0",""
+"0","#par(mfrow=c(1,2))"
+"0",""
+"0","ggplot(result_mortalite, aes(x=Mortalite, y=biomasse))+facet_wrap(~year)+ggtitle(paste(""Année""))+geom_point(color=""#88CCEE"")"

@@ -1,0 +1,3777 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass mwrep
+\begin_preamble
+\makeatletter
+\@addtoreset{chapter}{part}
+\@addtoreset{section}{chapter}
+%\@addtoreset{thm}{section}
+\makeatother
+\usepackage{icomma}
+\renewcommand\thesection{\Roman{section}}
+\renewcommand\thesubsection{~~~\alph{subsection}}
+%\renewcommand\thethm{\arabic{section}.\arabic{thm}}
+%\renewcommand\thedefn{\arabic{section}.\arabic{thm}}
+%\renewcommand\theprop{\arabic{section}.\arabic{thm}}
+%\renewcommand\thelem{\arabic{section}.\arabic{thm}}
+%\renewcommand\thecor{\arabic{section}.\arabic{thm}}
+\end_preamble
+\use_default_options true
+\begin_modules
+eqs-within-sections
+theorems-ams
+theorems-chap
+theorems-ams-extended
+\end_modules
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "urlcolor=blue , linkcolor=black"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\bullet 0 2 5 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "l"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "40text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../S1V2-MMSN_5/images/logoINSA.jpg
+	lyxscale 20
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "l"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "40text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size larger
+Projets GM3
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size larger
+2022/2023
+\series default
+\size default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "l"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "100text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\shape slanted
+\size huge
+Résolution de sudoku
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+S1V3 - MIPP
+\series default
+\shape default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagesSoduku-en-ligne-1.jpg
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+large
+\backslash
+centering{
+\end_layout
+
+\end_inset
+
+
+\series bold
+Étudiants : Constance BAU et Paul MEHAUD
+\begin_inset Newline newline
+\end_inset
+
+Encadrant : Cendrella CHAHINE
+\series default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Présentation du sujet
+\end_layout
+
+\begin_layout Standard
+Le sudoku est un jeu de réflexion inventé en 1979 par l'Américain Howard
+ GARNS.
+ Ce jeu est notamment inspiré du carré latin.
+\end_layout
+
+\begin_layout Standard
+Le but du jeu est de remplir une grille 
+\begin_inset Formula $9\times9$
+\end_inset
+
+ par des chiffres qui ne se trouvent jamais plus d'une fois dans la même
+ ligne, la même colonne ou le même carré (bloc de 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ cases).
+ Un exemple de grille non résolue est donnée en page de couverture de ce
+ rapport.
+\end_layout
+
+\begin_layout Standard
+La difficulté du jeu est inversement proportionnelle au nombre de chiffres
+ présents sur la grille de départ.
+ Moins il y en a, moins il y a de solutions de placement évidentes, ce qui
+ oblige à 
+\begin_inset Quotes fld
+\end_inset
+
+faire des paris
+\begin_inset Quotes frd
+\end_inset
+
+ : on place un chiffre sur une case en espérant que ce soit la bonne solution
+ mais sans en être sûr.
+\end_layout
+
+\begin_layout Standard
+Pour résoudre ce sudoku de manière automatique, nous avons implémenté un
+ algorithme qui remplit les cases ne présentant qu'une seule possibilité
+ de chiffre.
+ Elle répète cette action jusqu'à ce qu'aucune case ne puisse être remplie
+ de cette manière.
+ Ensuite pour les cases vides restantes nous avons implémenté une solution
+ de backtracking, un algorithme qui fait des hypothèses sur les chiffres
+ à placer.
+ C'est un parcours récursif en profondeur du sudoku qui, s'il mène à un
+ échec, reviens à l'étape précédente.
+ C'est donc ce qu'on appelle un algorithme glout
+\end_layout
+
+\begin_layout Chapter
+Modélisation
+\end_layout
+
+\begin_layout Standard
+Dans ce chapitre nous allons expliquer le fonctionnement de notre programme.
+ Pour résoudre une grille de sudoku le programme va tout d'abord remplir
+ les cases dans lesquelles un seul chiffre est possible (comme le ferait
+ un humain).
+ La procédure qui va le faire s'appelle 
+\emph on
+resoudreUnePossibilite
+\emph default
+.
+ Puis une fois qu'aucun chiffre ne peut plus être trouvé de cette manière,
+ s'il reste des cases vides, nous allons utiliser la 
+\begin_inset Quotes fld
+\end_inset
+
+force brute
+\begin_inset Quotes frd
+\end_inset
+
+ aussi appelé algorithme de backtracking pour remplir les cases.
+ C'est à dire que l'algorithme va mettre dans la première case vide le premier
+ chiffre possible puis continuer ainsi jusqu'à ce qu'il n'y ait plus aucune
+ possibilité pour une case, il reviendra alors à la case précédemment modifiée
+ pour changer le chiffre mis en place.
+ Il fera cela de manière récursive jusqu'au remplissage complet de la grille.
+ Cette technique est aussi utilisée par les humains pour résoudre les sudokus
+ mais à moindre échelle, c'est à dire seulement quand il y a deux possibilités
+ pour plusieurs cases et qu'on ne peut pas déterminer laquelle est la bonne.
+ On appelle cette méthode 
+\begin_inset Quotes fld
+\end_inset
+
+faire des hypothèses
+\begin_inset Quotes frd
+\end_inset
+
+.
+ La fonction 
+\emph on
+resoudreSudoku
+\emph default
+ va utiliser la même méthode mais à grande échelle.
+\end_layout
+
+\begin_layout Section
+Pseudo-code des algorithmes récursifs
+\end_layout
+
+\begin_layout Standard
+Voici le pseudo-code des deux algorithmes récursifs du programme :
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\bar under
+Procédure
+\bar default
+ resoudreUnePossibilite(E/S grille : tableau[1..9][1..9])
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\bar under
+Var
+\bar default
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+i, j, chiffreTest, tmp, compteur1, compteur2 : entier
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\bar under
+Début
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+compteur2 <- 0
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Pour
+\bar default
+ i <- 1 
+\bar under
+à
+\bar default
+ 9 
+\bar under
+inc
+\bar default
+ +1 
+\bar under
+Faire
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Pour
+\bar default
+ j <- 1 
+\bar under
+à
+\bar default
+ 9 
+\bar under
+inc
+\bar default
+ +1 
+\bar under
+Faire
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Si
+\bar default
+ grille[i][j] = 0
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Alors
+\bar default
+ compteur1 <- 1
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Pour
+\bar default
+ chiffreTest <- 1 à 9 inc +1 Faire
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Si
+\bar default
+ (nonDansCarre(i,j,chiffreTest) et nonDansLigne(i,chiffreTest) et
+\begin_inset Newline newline
+\end_inset
+
+nonDansColonne(j,chiffreTest))
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Alors
+\bar default
+ tmp <- chiffreTest
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+compteur1 <- compteur1 + 1	
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinSi
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinPour
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Si
+\bar default
+ compteur1 = 1 {on regarde s'il y a un seul chiffre possible pour la case
+ et si oui on place le chiffre}
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Alors
+\bar default
+ grille[i][j] <- tmp
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+compteur2 = 1
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinSi
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinSi
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinPour
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinPour
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Si
+\bar default
+ compteur2 = 1 {si un chiffre a été placé on recommence la recherche de
+ possibilité unique dans la grille}
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Alors
+\bar default
+ resoudreUnePossibilite()
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinSi
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\bar under
+Fin
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\bar under
+Fonction
+\bar default
+ resoudreSudoku(E i, j : entier) : booléen
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\bar under
+Var
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+chiffre, i_apres, j_apres : entier
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\bar under
+Début
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+chiffre <- 1
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+i_apres <- 0
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+j_apres <- 0
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Si
+\bar default
+ grille[i][j] 
+\begin_inset Formula $\neq$
+\end_inset
+
+ 0
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Alors
+\bar default
+ Si (i = 9 et j = 9)
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Alors
+\bar default
+ retourner(VRAI)
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinSi
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Si
+\bar default
+ i < 9
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Alors
+\bar default
+ i <- i + 1
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Sinon
+\bar default
+ 
+\bar under
+Si
+\bar default
+ j < 9
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Alors
+\bar default
+ i <- 0
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+j <- j + 1
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinSi
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinSi
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Si
+\bar default
+ resoudreSudoku(i,j)
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Alors
+\bar default
+ retourner(VRAI)
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Sinon
+\bar default
+ retourner(FAUX)
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinSi
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinSi
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Si
+\bar default
+ grille[i][j] = 0
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+TantQue
+\bar default
+ chiffre <= 9 
+\bar under
+Faire
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Si
+\bar default
+ (nonDansCarre(i,j,chiffre) et nonDansLigne(i,chiffre) et
+\begin_inset Newline newline
+\end_inset
+
+nonDansColonne(j,chiffre) {on vérifie si le chiffre est valide}
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Alors
+\bar default
+ grille[i][j] <- chiffre	
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Si
+\bar default
+ (i=9 et j=9)
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Alors
+\bar default
+ retourner(VRAI)
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinSi
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Si
+\bar default
+ i < 9
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Alors
+\bar default
+ i_apres <- i + 1
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Sinon
+\bar default
+ i_apres <- 0
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+j_apres <- j + 1
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinSi
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Si
+\bar default
+ resoudreSudoku(i_apres,j_apres)
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+Alors
+\bar default
+ retourner(VRAI)
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinSi
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinSi
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+chiffre <- chiffre + 1
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinTantQue
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+grille[i][j] <- 0
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+retourner(FAUX)
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+FinSi
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family typewriter
+\bar under
+Fin
+\end_layout
+
+\begin_layout Section
+Fonctions complémentaires
+\end_layout
+
+\begin_layout Standard
+Afin de faire fonctionner ces deux algorithmes, nous aurons besoins de fonctions
+ et procédures annexes, dont voici les présentations
+\end_layout
+
+\begin_layout Paragraph
+
+\emph on
+void remplissageGrille()
+\emph default
+ :
+\end_layout
+
+\begin_layout Standard
+Cette procédure remplit la grille qui est une variable globale du programme
+ (sous forme d'un tableau statique de taille 
+\begin_inset Formula $9\times9$
+\end_inset
+
+) grâce à un fichier de données choisi par l'utilisateur.
+\end_layout
+
+\begin_layout Paragraph
+
+\emph on
+int dansLaLigne(int ligne, int chiffre)
+\emph default
+ :
+\end_layout
+
+\begin_layout Standard
+Cette fonction permet de savoir si le chiffre mis en entrée est dans la
+ ligne mise en entrée, s'il l'est elle renvoie 1, 0 sinon.
+\end_layout
+
+\begin_layout Paragraph
+
+\emph on
+int dansLaColonne(int colonne, int chiffre)
+\emph default
+ :
+\end_layout
+
+\begin_layout Standard
+Cette fonction permet de savoir si le chiffre mis en entrée est dans la
+ colonne mise en entrée, s'il l'est elle renvoie 1, 0 sinon.
+\end_layout
+
+\begin_layout Paragraph
+
+\emph on
+int quelleBorne(int indice)
+\emph default
+ :
+\end_layout
+
+\begin_layout Standard
+Cette fonction est utile pour trouver les borne du carré dans lequel la
+ fonction 
+\emph on
+dansLeCarre
+\emph default
+ recherche un chiffre.
+\end_layout
+
+\begin_layout Paragraph
+
+\emph on
+int dansLeCarre(int i, int j, int chiffre)
+\emph default
+ :
+\end_layout
+
+\begin_layout Standard
+Cette fonction permet de savoir si le chiffre mis en entrée est dans le
+ carré comportant la case de coordonnées [i][j] , i et j étant les coordonnées
+ mises en entrée.
+\end_layout
+
+\begin_layout Paragraph
+
+\emph on
+void afficheSudoku()
+\emph default
+ :
+\end_layout
+
+\begin_layout Standard
+Cette procédure affiche la grille mise en variable globale du programme.
+\end_layout
+
+\begin_layout Paragraph
+
+\emph on
+void resoudreUnePossibilite()
+\emph default
+ :
+\end_layout
+
+\begin_layout Standard
+Cette procédure remplit les cases vides de la grille .
+\end_layout
+
+\begin_layout Paragraph
+
+\emph on
+int resoudreSudoku(int i, int j)
+\emph default
+ :
+\end_layout
+
+\begin_layout Standard
+Cette fonction remplit les cases vides de la grille avec la force brute,
+ elle fait des suppositions, des hypothèses sur les chiffres à mettre dans
+ les cases et changent ces hypothèses dès qu'une case vide ne possède plus
+ aucun chiffre possible.
+ Elle fait cela jusqu'à pouvoir remplir entièrement la grille.
+ 
+\end_layout
+
+\begin_layout Chapter
+Choix d'implémentations et explications
+\end_layout
+
+\begin_layout Standard
+Pour l'implémentation nous avons choisi des tableaux statiques car la taille
+ d'une grille de sudoku est toujours la même.
+ On a choisi que la grille de sudoku soit une variable globale du programme
+ donc une variable de profondeur 
+\begin_inset Formula $0$
+\end_inset
+
+ qui peut être modifié dans chaque fonction du programme.
+\end_layout
+
+\begin_layout Standard
+Pour représenter les lignes et les colonnes, nous avons choisi de les nommer
+ 
+\begin_inset Formula $i$
+\end_inset
+
+ et 
+\begin_inset Formula $j$
+\end_inset
+
+, comme pour les matrices en mathématiques.
+ Cette notation nous a permit un facilité lors de l'écriture du programme.
+\end_layout
+
+\begin_layout Standard
+Pour coller à l'implémentation des tableaux en C, les colonnes, lignes et
+ carrés sont numérotés dans le programme de 
+\begin_inset Formula $0$
+\end_inset
+
+ à 
+\begin_inset Formula $8$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La variable 
+\emph on
+chiffre
+\emph default
+ représente un chiffre que l'on peut mettre dans une case de la grille,
+ il est donc numéroté de 
+\begin_inset Formula $1$
+\end_inset
+
+ à 
+\begin_inset Formula $9$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Chapter
+Résultats des jeux d'essais
+\end_layout
+
+\begin_layout Standard
+Pour tester notre algorithme nous avons choisi différentes grilles d'essais,
+ dont certaines sont fausses.
+ Vous pouvez trouver avec ce rapport tous les fichiers de données et de
+ résultats.
+\end_layout
+
+\begin_layout Standard
+Afin mesurer le temps d'exécution et vérifier si la difficulté d'une grille
+ (nombre de chiffres déjà présents dans une grille) influait sur le temps
+ d'exécution, nous avons implémenté un timer grâce au 
+\begin_inset CommandInset href
+LatexCommand href
+name "site suivant"
+target "https://ichi.pro/fr/8-facons-de-mesurer-le-temps-d-execution-en-c-c-79591185633529"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Grilles de difficulté faible
+\end_layout
+
+\begin_layout Standard
+Pour commencer, nous avons testé la résolution de deux grilles de difficulté
+ faible :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename grille2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Grille 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename grille1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Grille 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ce qui donne alors, après exécution du programme :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Rgrille1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Résultat Grille 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Rgrille2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Résultat Grille 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pour la grille 1, le temps d'exécution est de 
+\begin_inset Formula $0,000\,25$
+\end_inset
+
+ secondes et, pour la grille 2, il est de 
+\begin_inset Formula $0,000\,31$
+\end_inset
+
+ secondes.
+\end_layout
+
+\begin_layout Section
+Grille de difficulté élevée
+\end_layout
+
+\begin_layout Standard
+Pour poursuivre les tests, nous avons créé spécialement une grille très
+ difficile :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename grille3.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Grille 3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+La difficulté de cette grille réside dans le fait qu'il n'y a qu'une seule
+ occurrence de chaque chiffres.
+ Ces chiffres sont répartis aléatoirement dans la grille de telle manière
+ qu'il n'y en ai qu'un par ligne, colonne et carré.
+\end_layout
+
+\begin_layout Standard
+Voici ce qu'on obtient comme résultat :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Rgrille3.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Résultat Grille 3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+En terme de temps d'exécution, on obtient : 
+\begin_inset Formula $0,000\,41$
+\end_inset
+
+ secondes.
+\end_layout
+
+\begin_layout Section
+Grille vide
+\end_layout
+
+\begin_layout Standard
+Afin de tester notre algorithme sur des cas limites, nous avons commencé
+ par tester s'il pouvait résoudre une grille vide.
+ Voici le résultat obtenu :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Rgrille_vide.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Résultat Grille vide
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Ce résultat est obtenu au bout de 
+\begin_inset Formula $0,000\,43$
+\end_inset
+
+ secondes, à peine plus que la grille précédente.
+ Ici, on voit bien comment l'algorithme fonctionne : il remplit la grille
+ colonne par colonne, en partant de la gauche.
+\end_layout
+
+\begin_layout Section
+Grilles fausses
+\end_layout
+
+\begin_layout Standard
+Enfin, pour continuer à tester notre algorithme, nous l'avons testé sur
+ des grilles volontairement fausses.
+ La première est une grille est une grille où les chiffres du premier carré
+ ne respectent pas la règle de l'unicité de présence au sein des colonnes,
+ lignes et carrés.
+ Nous avons aussi rajouté 3 chiffres aléatoires.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename grille_fausse1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Grille fausse 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ensuite, nous avons testé une autre grille fausse, qui est la réplique de
+ la grille 1, à l'exception près que le premier chiffre en haut à gauche
+ a été remplacé par 
+\begin_inset Formula $10$
+\end_inset
+
+, un chiffre impossible au sudoku.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename grille_fausse2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Grille fausse 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A l'exécution, pour la première grille le programme ne rend rien mais arrête
+ son exécution et nous donne un temps d'exécution de 
+\begin_inset Formula $2,495\,90$
+\end_inset
+
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+secondes.
+\end_layout
+
+\begin_layout Standard
+Pour la deuxième grille voici le résultat, obtenu en 
+\begin_inset Formula $0,000\,25$
+\end_inset
+
+ secondes :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Rgrille_fausse2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Résultat Grille fausse 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Ce résultat est strictement identique à celui de la grille 1 (sauf le 
+\begin_inset Formula $10$
+\end_inset
+
+ au début).
+\end_layout
+
+\begin_layout Section
+Comparaison de résultats avec un algorithme sans 
+\emph on
+resoudreUnePossibilite()
+\end_layout
+
+\begin_layout Standard
+Dans une première version du programme (
+\emph on
+sudoku2.c
+\emph default
+) nous n'avions pas implémenté la procédure 
+\emph on
+resoudreUnePossibilite()
+\emph default
+.
+ Nous l'avons donc testée sur les trois premières grilles (cf.
+ fichiers de résultats avec 
+\begin_inset Quotes fld
+\end_inset
+
+
+\emph on
+bis
+\emph default
+
+\begin_inset Quotes frd
+\end_inset
+
+ dans le nom).
+ Voici les temps d'exécution que nous avons obtenu :
+\end_layout
+
+\begin_layout Standard
+Pour la grille 1 : 
+\begin_inset Formula $0,000\,93$
+\end_inset
+
+ secondes.
+ Pour la grille 2 : 
+\begin_inset Formula $0,000\,26$
+\end_inset
+
+ secondes.
+ Pour la grille 3 : 
+\begin_inset Formula $0,000\,51$
+\end_inset
+
+ secondes.
+\end_layout
+
+\begin_layout Standard
+On remarque alors que pour la grille 1, le temps d'exécution est quasiment
+ divisé par 
+\begin_inset Formula $4$
+\end_inset
+
+.
+ Alors que pour les grilles 2 et 3, le temps d'exécution est augmenté de
+ 
+\begin_inset Formula $0,000\,10$
+\end_inset
+
+ secondes.
+\end_layout
+
+\begin_layout Standard
+A ce jour, nous ne savons toujours pas expliquer pourquoi cette incohérence
+ existe.
+\end_layout
+
+\begin_layout Standard
+Malgré tout, les temps d'exécution restent très faibles.
+\end_layout
+
+\begin_layout Chapter
+Synthèse critique
+\end_layout
+
+\begin_layout Standard
+Pour conclure, on a pu, grâce à ce projet, approcher une forme primitive
+ d'intelligence artificielle : la force brute.
+ Ces algorithmes sont peu optimisés mais très adaptés à un problème comme
+ le sudoku.
+ Cette idée est confirmée par les temps d'exécution qui sont très faibles.
+ Cependant, on remarque que le temps d'exécution est corrélé avec la difficulté
+ de la grille.
+ Plus elle est difficile, plus il faut de temps pour la résoudre.
+\end_layout
+
+\begin_layout Standard
+Malgré le fait que notre algorithme donne des résultats justes, nous ne
+ pouvons toujours pas expliquer les différences de temps d'exécution soulevés
+ dans la partie précédente.
+\end_layout
+
+\end_body
+\end_document

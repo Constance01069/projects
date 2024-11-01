@@ -1,0 +1,4 @@
+"0","library(sensitivity)"
+"0","sa <- shapleyPermEx(modlin, Xall, Xset, d=3, Nv=1e4, No=1e3, Ni=3)"
+"0",""
+"0","library(ggplot2) ;ggplot(sa, ylim=c(0,1.5))"
