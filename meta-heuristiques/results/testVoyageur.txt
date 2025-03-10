@@ -1,0 +1,5 @@
+Résultats de l'instance du problème du voyageur ... avec un temps de 10 secondes 
+Recuit Simulé, meilleure distance trouvée = 56467.01579822019 km 
+Algorithme des Fourmis, meilleure distance trouvée = 32469.651783111534 km 
+Algorithme Génétique, meilleure distance trouvée = 32465.183074499528 km 
+Escalade, meilleure valeur trouvée = 57321.82447254743 km 

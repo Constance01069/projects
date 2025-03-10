@@ -1,0 +1,5 @@
+Résultats de l'instance pr107.tsp avec un temps de 1000 secondes 
+Recuit Simulé, meilleure distance trouvée = 418607.33699912106 km 
+Algorithme des Fourmis, meilleure distance trouvée = 65562.10093813902 km 
+Algorithme Génétique, meilleure distance trouvée = 135574.16652833365 km 
+Escalade, meilleure distance trouvée = 416442.9021150243 km 

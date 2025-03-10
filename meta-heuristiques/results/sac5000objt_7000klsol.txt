@@ -1,0 +1,4 @@
+Résultats de l'instance du problème du sac à dos avec 5000 objets possibles et un poids max de 7000 avec un temps de 700 secondes 
+solution avec algorihtme glouton = 34021 km 
+Recuit Simulé, meilleure valeur trouvée = 29814 km 
+Escalade, meilleure valeur trouvée = 29382 km 

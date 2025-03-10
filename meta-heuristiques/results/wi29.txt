@@ -1,0 +1,5 @@
+Résultats de l'instance wi29.tsp avec un temps de 1000 secondes 
+Recuit Simulé, meilleure distance trouvée = 54702.777845545424 km 
+Algorithme des Fourmis, meilleure distance trouvée = 29183.788329428688 km 
+Algorithme Génétique, meilleure distance trouvée = 34895.54715919122 km 
+Escalade, meilleure distance trouvée = 52131.827593714384 km 

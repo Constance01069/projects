@@ -1,0 +1,5 @@
+Résultats de l'instance bays29.tsp avec un temps de 1500 secondes 
+Recuit Simulé, meilleure distance trouvée = 15544.727794809904 km 
+Algorithme des Fourmis, meilleure distance trouvée = 10804.379056434422 km 
+Algorithme Génétique, meilleure distance trouvée = 10390.258329341397 km 
+Escalade, meilleure distance trouvée = 15826.97697751341 km 

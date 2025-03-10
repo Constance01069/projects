@@ -1,0 +1,5 @@
+Résultats de l'instance zi929.tsp avec un temps de 10000 secondes 
+Recuit Simulé, meilleure distance trouvée = 2172551.904780799 km 
+Algorithme des Fourmis, meilleure distance trouvée = 178228.754376957 km 
+Algorithme Génétique, meilleure distance trouvée = 614752.3452861246 km 
+Escalade, meilleure distance trouvée = 2154887.7688108203 km 

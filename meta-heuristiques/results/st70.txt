@@ -1,0 +1,5 @@
+Résultats de l'instance st70.tsp avec un temps de 1000 secondes 
+Recuit Simulé, meilleure distance trouvée = 2708.4645714051244 km 
+Algorithme des Fourmis, meilleure distance trouvée = 867.0070942318599 km 
+Algorithme Génétique, meilleure distance trouvée = 1122.062064178844 km 
+Escalade, meilleure distance trouvée = 2609.759871736698 km 

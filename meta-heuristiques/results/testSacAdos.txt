@@ -1,0 +1,4 @@
+Résultats de l'instance du problème du sac à dos avec 500 objets possibles et un poids max de 1200 kg avec un temps de 10 secondes 
+solution avec algorihtme glouton = 5749  
+Recuit Simulé, meilleure valeur trouvée = 5207  
+Escalade, meilleure valeur trouvée = 5343 

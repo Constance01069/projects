@@ -1,0 +1,5 @@
+Résultats de l'instance bier127.tsp avec un temps de 1500 secondes 
+Recuit Simulé, meilleure distance trouvée = 519181.81079840066 km 
+Algorithme des Fourmis, meilleure distance trouvée = 160899.21833140982 km 
+Algorithme Génétique, meilleure distance trouvée = 182915.19178217518 km 
+Escalade, meilleure distance trouvée = 509703.87864124746 km 

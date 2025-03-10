@@ -1,0 +1,5 @@
+Résultats de l'instance uy734.tsp avec un temps de 1000 secondes 
+Recuit Simulé, meilleure distance trouvée = 1518603.8614409734 km 
+Algorithme des Fourmis, meilleure distance trouvée = 178078.78255117848 km 
+Algorithme Génétique, meilleure distance trouvée = 654721.8746755269 km 
+Escalade, meilleure distance trouvée = 1510230.7861136629 km 
